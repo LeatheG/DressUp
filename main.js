@@ -1,24 +1,51 @@
 let state = {
-  dress: 0,
+  bottoms: 0,
   hair: 0,
-  hat: 0,
+  shirt: 0,
   shoes: 0,
   accessory: 0,
   face: 0,
 };
-nextdress();
-nexthair();
-nextface();
-//function to change dress
-function nextdress() {
-  let dress = document.querySelector("#dress");
+const SHIRT_COUNT = 4;
 
-  if (state.dress < 7) {
-    state.dress++;
-    dress.setAttribute("class", `dress${state.dress}`);
-  } else if (state.dress === 7) {
-    state.dress = 0;
-    dress.setAttribute("class", `dress${state.dress}`);
+nextbottoms();
+nexthair();
+nextshirt();
+nextshoes();
+nextface();
+updateShirtCarousel();
+
+function getShirtPreviewIndex(indexOffset) {
+  const current = state.shirt === 0 ? 1 : state.shirt;
+  return ((current - 1 + indexOffset + SHIRT_COUNT) % SHIRT_COUNT) + 1;
+}
+
+function setShirtPreview(imgId, nameId, shirtIndex) {
+  const image = document.querySelector(`#${imgId}`);
+  const name = document.querySelector(`#${nameId}`);
+
+  if (!image || !name) {
+    return;
+  }
+
+  image.src = `./images4/shirt${shirtIndex}.png`;
+  name.textContent = `Shirt ${shirtIndex}`;
+}
+
+function updateShirtCarousel() {
+  setShirtPreview("shirtPrevImg", "shirtPrevName", getShirtPreviewIndex(-1));
+  setShirtPreview("shirtCurrentImg", "shirtCurrentName", getShirtPreviewIndex(0));
+  setShirtPreview("shirtNextImg", "shirtNextName", getShirtPreviewIndex(1));
+}
+
+function nextbottoms() {
+  let bottoms = document.querySelector("#bottoms");
+  if (state.bottoms < 5) {
+    state.bottoms++;
+    bottoms.setAttribute("class", `bottoms${state.bottoms}`);
+  } else if (state.bottoms === 5) {
+    state.bottoms = 0;
+    bottoms.setAttribute("class", `bottoms${state.bottoms}`);
   }
 }
 
@@ -43,15 +70,17 @@ function nexthair() {
   }
 }
 
-function nexthat() {
-  let hat = document.querySelector("#hat");
-  if (state.hat < 4) {
-    state.hat++;
-    hat.setAttribute("class", `hat${state.hat}`);
-  } else if (state.hat === 4) {
-    state.hat = 0;
-    hat.setAttribute("class", `hat${state.hat}`);
+function nextshirt() {
+  let shirt = document.querySelector("#shirt");
+  if (state.shirt < 4) {
+    state.shirt++;
+    shirt.setAttribute("class", `shirt${state.shirt}`);
+  } else if (state.shirt === 4) {
+    state.shirt = 0;
+    shirt.setAttribute("class", `shirt${state.shirt}`);
   }
+
+  updateShirtCarousel();
 }
 
 function nextface() {

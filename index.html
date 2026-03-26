@@ -12,18 +12,38 @@
     <div id="box">
       <div id="backdrop">
         <div id="face"></div>
-        <div id="hat"></div>
+        <div id="shirt"></div>
         <div id="hair"></div>
         <div id="girl"></div>
         <div id="shoes"></div>
-        <div id="dress"></div>
+        <div id="bottoms"></div>
       </div>
       <div class="buttonBox">
         <button id="nexthair" onclick="nexthair()">hair➡</button>
-        <button id="nextdress" onclick="nextdress()">dress➡</button>
+        <button id="nextbottoms" onclick="nextbottoms()">bottoms➡</button>
         <button id="nextshoes" onclick="nextshoes()">shoes➡</button>
-        <button id="nexthat" onclick="nexthat()">accessory➡</button>
+        <button id="nextshirt" onclick="nextshirt()">shirt➡</button>
         <button id="nextface" onclick="nextface()">face➡</button>
+      </div>
+
+      <div id="shirtCarousel" aria-label="Shirt preview carousel">
+        <div class="shirtPreviewCard" id="shirtPrevCard">
+          <span class="previewLabel">Previous</span>
+          <img id="shirtPrevImg" alt="Previous shirt option" />
+          <span class="previewName" id="shirtPrevName"></span>
+        </div>
+        <div class="shirtPreviewCard current" id="shirtCurrentCard">
+          <span class="previewLabel">Current</span>
+          <img id="shirtCurrentImg" alt="Current shirt option" />
+          <span class="previewName" id="shirtCurrentName"></span>
+        </div>
+        <div class="shirtPreviewCard" id="shirtNextCard">
+          <span class="previewLabel">Next</span>
+          <img id="shirtNextImg" alt="Next shirt option" />
+          <span class="previewName" id="shirtNextName"></span>
+        </div>
+
+        
       </div>
       <!-- We can put our github links here!
       <div id="linksBox">
