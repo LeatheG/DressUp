@@ -83,18 +83,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  gap: 0.7rem;
-  margin: 1rem auto;
-  width: 92%;
+  gap: 2rem;
+  margin: 0;
+  width: 100%;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .bangsPreviewCard {
-  background-color: rgba(255, 240, 251, 0.9);
-  border: 2px solid rgba(127, 61, 129, 0.35);
-  border-radius: 12px;
+  background-color: rgba(255, 240, 251, 0.855);
+  border: 2px solid #DFC9F2;
+  border-radius: 20px;
   box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
-  padding: 0.45rem;
-  width: 120px;
+  padding: 0.3rem;
+  width: 115px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,15 +105,14 @@ body {
 
 .bangsPreviewCard.current {
   border-color: rgba(129, 61, 100, 0.9);
-  transform: translateY(-2px);
 }
 
 .bangsPreviewCard img {
-  width: 72px;
-  height: 116px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 /* HAIR PREVIEW CARDS */
@@ -119,18 +120,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  gap: 0.7rem;
-  margin: 1rem auto;
-  width: 92%;
+  gap: 2rem;
+  margin: 0;
+  width: 100%;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .hairPreviewCard {
-  background-color: rgba(255, 240, 251, 0.9);
-  border: 2px solid rgba(127, 61, 129, 0.35);
-  border-radius: 12px;
+  background-color: rgba(255, 240, 251, 0.855);
+  border: 2px solid #DFC9F2;
+  border-radius: 20px;
   box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
-  padding: 0.45rem;
-  width: 120px;
+  padding: 0.3rem;
+  width: 115px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -139,15 +142,14 @@ body {
 
 .hairPreviewCard.current {
   border-color: rgba(129, 61, 100, 0.9);
-  transform: translateY(-2px);
 }
 
 .hairPreviewCard img {
-  width: 72px;
-  height: 116px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 /* FACE PREVIEW CARDS */
@@ -155,18 +157,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  gap: 0.7rem;
-  margin: 1rem auto;
-  width: 92%;
+  gap: 2rem;
+  margin: 0;
+  width: 100%;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .facePreviewCard {
-  background-color: rgba(255, 240, 251, 0.9);
-  border: 2px solid rgba(127, 61, 129, 0.35);
-  border-radius: 12px;
+  background-color: rgba(255, 240, 251, 0.855);
+  border: 2px solid #DFC9F2;
+  border-radius: 20px;
   box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
-  padding: 0.45rem;
-  width: 120px;
+  padding: 0.3rem;
+  width: 115px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -175,15 +179,14 @@ body {
 
 .facePreviewCard.current {
   border-color: rgba(129, 61, 100, 0.9);
-  transform: translateY(-2px);
 }
 
 .facePreviewCard img {
-  width: 72px;
-  height: 116px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 /* SHIRT PREVIEW CARDS */
@@ -192,7 +195,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  gap: 0.7rem;
+  gap: 2rem;
   margin: 0;
   width: 100%;
   grid-column: 2;
@@ -202,10 +205,10 @@ body {
 .shirtPreviewCard {
   background-color: rgba(255, 240, 251, 0.855);
   border: 2px solid #DFC9F2;
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
-  padding: 0.45rem;
-  width: 120px;
+  padding: 0.3rem;
+  width: 115px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -213,16 +216,15 @@ body {
 }
 
 .shirtPreviewCard.current {
-  border-color: #fff8ef;
-  transform: translateY(-2px);
+  border-color: rgba(129, 61, 100, 0.9);
 }
 
 .shirtPreviewCard img {
-  width: 72px;
-  height: 72px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 /* BOTTOMS PREVIEW CARDS */
@@ -230,18 +232,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  gap: 0.7rem;
-  margin: 1rem auto;
-  width: 92%;
+  gap: 2rem;
+  margin: 0;
+  width: 100%;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .bottomsPreviewCard {
-  background-color: rgba(255, 240, 251, 0.9);
-  border: 2px solid rgba(127, 61, 129, 0.35);
-  border-radius: 12px;
+  background-color: rgba(255, 240, 251, 0.855);
+  border: 2px solid #DFC9F2;
+  border-radius: 20px;
   box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
-  padding: 0.45rem;
-  width: 120px;
+  padding: 0.3rem;
+  width: 115px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -250,15 +254,14 @@ body {
 
 .bottomsPreviewCard.current {
   border-color: rgba(129, 61, 100, 0.9);
-  transform: translateY(-2px);
 }
 
 .bottomsPreviewCard img {
-  width: 72px;
-  height: 116px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 /* SHOES PREVIEW CARDS */
@@ -266,18 +269,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  gap: 0.7rem;
-  margin: 1rem auto;
-  width: 92%;
+  gap: 2rem;
+  margin: 0;
+  width: 100%;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .shoesPreviewCard {
-  background-color: rgba(255, 240, 251, 0.9);
-  border: 2px solid rgba(127, 61, 129, 0.35);
-  border-radius: 12px;
+  background-color: rgba(255, 240, 251, 0.855);
+  border: 2px solid #DFC9F2;
+  border-radius: 20px;
   box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
-  padding: 0.45rem;
-  width: 120px;
+  padding: 0.3rem;
+  width: 115px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -286,17 +291,15 @@ body {
 
 .shoesPreviewCard.current {
   border-color: rgba(129, 61, 100, 0.9);
-  transform: translateY(-2px);
 }
 
 .shoesPreviewCard img {
-  width: 72px;
-  height: 116px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: 10px;
 }
-
 
 .previewLabel {
   font-size: 0.72rem;
