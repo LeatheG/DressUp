@@ -2,22 +2,42 @@ body {
   background-color: rgb(184, 73, 106);
   background-image: linear-gradient(
     -10deg,
-    #813d76 0%,
-    #c953a2 58%,
-    #f36ec4 100%
+    #FFE1B4 0%,  
+    #DFC9F2 25%, 
+    #BBC6EE 50%,  
+    #DAF2D4 75%,  
+    #FFD2D0 100%  
   );
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 #box {
-  background-color: rgb(247, 150, 208);
-  border-radius: 20px;
-  margin-left: 2rem;
-  margin-right: auto;
+  background-color: #d2b4ec;
+  border: 2px solid rgb(107, 102, 102);
+  border-radius: 7px;
+  margin-left: 125px;
+  margin-top: 25px;
+
   text-align: center;
-  height: 800px;
-  width: 600px;
+  height: 860px;
+  width: 650px;
+  position: absolute;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  padding-left: 2px;
 }
+
+#backdrop {
+  border: 2px solid rgb(107, 102, 102);
+  margin-top: 4%;
+  margin-left: 15%;
+  position: relative;
+  background-color: rgb(246, 240, 255);
+  border-radius: 90px;
+  height: 92.5%;
+  width: 70%;
+}
+
 #linksBox {
   text-align: center;
   margin: auto;
@@ -28,13 +48,16 @@ body {
 #linksBox a {
   padding: 0px 5px;
 }
+
 #linksBox a img {
   border-radius: 7px;
   box-shadow: 0px 0px 2px 1px rgb(255, 196, 222);
 }
+
 #linksBox:hover {
   opacity: 100%;
 }
+
 #heading {
   font-size: 30px;
   text-align: center;
@@ -42,19 +65,131 @@ body {
   text-shadow: 0px 4px 5px rgb(88, 24, 67);
   font-family: "j'aime le poisson !", "Trebuchet ms";
 }
-#backdrop {
-  top: 2em;
-  margin: auto;
-  position: relative;
-  background-color: rgb(246, 240, 255);
-  border-radius: 20px;
-  height: 750px;
-  width: 400px;
-}
+
+
 .buttonBox {
   position: relative;
   margin: 1rem;
 }
+
+.listofoptions {
+  position: absolute;
+  top: 2em;
+  left: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* BANGS PREVIEW CARDS */
+#bangsCarousel {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.7rem;
+  margin: 1rem auto;
+  width: 92%;
+}
+
+.bangsPreviewCard {
+  background-color: rgba(255, 240, 251, 0.9);
+  border: 2px solid rgba(127, 61, 129, 0.35);
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
+  padding: 0.45rem;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.bangsPreviewCard.current {
+  border-color: rgba(129, 61, 100, 0.9);
+  transform: translateY(-2px);
+}
+
+.bangsPreviewCard img {
+  width: 72px;
+  height: 116px;
+  object-fit: contain;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+/* HAIR PREVIEW CARDS */
+#hairCarousel {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.7rem;
+  margin: 1rem auto;
+  width: 92%;
+}
+
+.hairPreviewCard {
+  background-color: rgba(255, 240, 251, 0.9);
+  border: 2px solid rgba(127, 61, 129, 0.35);
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
+  padding: 0.45rem;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.hairPreviewCard.current {
+  border-color: rgba(129, 61, 100, 0.9);
+  transform: translateY(-2px);
+}
+
+.hairPreviewCard img {
+  width: 72px;
+  height: 116px;
+  object-fit: contain;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+/* FACE PREVIEW CARDS */
+#faceCarousel {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.7rem;
+  margin: 1rem auto;
+  width: 92%;
+}
+
+.facePreviewCard {
+  background-color: rgba(255, 240, 251, 0.9);
+  border: 2px solid rgba(127, 61, 129, 0.35);
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
+  padding: 0.45rem;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.facePreviewCard.current {
+  border-color: rgba(129, 61, 100, 0.9);
+  transform: translateY(-2px);
+}
+
+.facePreviewCard img {
+  width: 72px;
+  height: 116px;
+  object-fit: contain;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+/* SHIRT PREVIEW CARDS */
 
 #shirtCarousel {
   display: flex;
@@ -91,6 +226,79 @@ body {
   border-radius: 8px;
 }
 
+/* BOTTOMS PREVIEW CARDS */
+#bottomsCarousel {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.7rem;
+  margin: 1rem auto;
+  width: 92%;
+}
+
+.bottomsPreviewCard {
+  background-color: rgba(255, 240, 251, 0.9);
+  border: 2px solid rgba(127, 61, 129, 0.35);
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
+  padding: 0.45rem;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.bottomsPreviewCard.current {
+  border-color: rgba(129, 61, 100, 0.9);
+  transform: translateY(-2px);
+}
+
+.bottomsPreviewCard img {
+  width: 72px;
+  height: 116px;
+  object-fit: contain;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+/* SHOES PREVIEW CARDS */
+#shoesCarousel {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.7rem;
+  margin: 1rem auto;
+  width: 92%;
+}
+
+.shoesPreviewCard {
+  background-color: rgba(255, 240, 251, 0.9);
+  border: 2px solid rgba(127, 61, 129, 0.35);
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
+  padding: 0.45rem;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.shoesPreviewCard.current {
+  border-color: rgba(129, 61, 100, 0.9);
+  transform: translateY(-2px);
+}
+
+.shoesPreviewCard img {
+  width: 72px;
+  height: 116px;
+  object-fit: contain;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+
 .previewLabel {
   font-size: 0.72rem;
   color: #5c2b66;
@@ -106,16 +314,21 @@ body {
 button {
   margin-top: 2em;
   margin-right: 0.4em;
-  color: black;
-  background-color: rgb(243, 240, 255);
-  box-shadow: 0px 1px 2px 1px rgb(218, 157, 220);
-  border-radius: 10px;
-  padding: 5px 12px;
-  /* font-size: larger; */
-  transition: 0.1s linear;}
+  color: #5c2b66;
+  background: linear-gradient(145deg, #ffe6f4, #f8d6ff);
+  box-shadow: 0px 3px 8px rgba(218, 157, 220, 0.6);
+  border-radius: 14px;
+  padding: 6px 14px;
+  border: none;
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
 button:hover {
-  background-color: rgb(248, 252, 255);
-  box-shadow: 0px 2px 4px 1px rgb(168, 118, 166);
+  background: linear-gradient(145deg, #ffd6f0, #f3bfff);
+  box-shadow: 0px 6px 14px rgba(218, 157, 220, 0.9);
+  transform: translateY(-3px) scale(1.05);
+  color: #7a2c6a;
 }
 
 #hairback {
@@ -132,58 +345,42 @@ button:hover {
   width: 400px;
   z-index: 1;
 }
-#shirt {
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 5;
-}
-#bottoms {
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 4;
-}
-#shoes {
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 2;
-}
-#hair {
-  background-repeat: no-repeat;
-  position: absolute;
-  
-  height: 750px;
-  width: 400px;
-  z-index: 2;
-}
+
+#girl,
+#shirt,
+#bottoms,
+#shoes,
+#hair,
 #face {
   background-repeat: no-repeat;
   position: absolute;
   height: 750px;
   width: 400px;
-  z-index: 6;
+  top: 20px;
+  left: 20px;
 }
-#hat {
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
+
+#shirt {
+  z-index: 5;
+}
+
+#bottoms {
+  z-index: 4;
+}
+
+#shoes {
+  z-index: 2;
+}
+
+#hair {
+  z-index: 2;
+}
+
+#face {
   z-index: 6;
 }
 
-.bottoms0 {
-  background-image: none;
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 4;
-}
+/* BOTTOMS IMAGES */
 .bottoms1 {
   background-image: url("./images4/bottoms1.png");
   background-repeat: no-repeat;
@@ -226,14 +423,7 @@ button:hover {
   z-index: 4;
 }
 
-.shirt0 {
-  background-image: none;
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 4;
-}
+/* SHIRT IMAGES */
 .shirt1 {
   background-image: url("./images4/shirt1.png");
   background-repeat: no-repeat;
@@ -270,6 +460,7 @@ button:hover {
   z-index: 5;
 }
 
+/* SHOES IMAGES */
 .shoes1 {
   background-image: url("./images4/shoes1 2.png");
   background-repeat: no-repeat;
@@ -292,6 +483,7 @@ button:hover {
   width: 400px;
 }
 
+/* SHIRT IMAGES */
 .shirt1 {
   background-image: url("./images4/shirt1.png");
   background-repeat: no-repeat;
@@ -323,6 +515,7 @@ button:hover {
   width: 400px;
 }
 
+/* HAIR IMAGES */
 .hair0 {
   background-image: url("./images4/hair0.png");
   background-repeat: no-repeat;
@@ -366,6 +559,7 @@ button:hover {
   width: 400px;
 }
 
+/* FACE IMAGES */
 .face1 {
   background-image: url("./images4/face1.png");
   background-repeat: no-repeat;
@@ -381,6 +575,7 @@ button:hover {
   width: 400px;
 }
 
+/* PHONE CAMPATABILITY LATER? */
 @media (max-width: 650px) {
   #box {
     width: 95%;

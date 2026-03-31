@@ -18,15 +18,87 @@
         <div id="shoes"></div>
         <div id="bottoms"></div>
       </div>
-      <div class="buttonBox">
-        <button id="nexthair" onclick="nexthair()">hair➡</button>
-        <button id="nextbottoms" onclick="nextbottoms()">bottoms➡</button>
-        <button id="nextshoes" onclick="nextshoes()">shoes➡</button>
-        <button id="nextshirt" onclick="nextshirt()">shirt➡</button>
-        <button id="nextface" onclick="nextface()">face➡</button>
-      </div>
+<div class="listofoptions">
+<!--BANGS-->
+      <div class="buttonBoxbangs">
+      <button onclick="nextbangs()">bangs➡</button>
 
-      <div id="shirtCarousel" aria-label="Shirt preview carousel">
+      <div id="bangsCarousel">
+        <div class="bangsPreviewCard" id="bangsPrevCard">
+          <span class="previewLabel">Previous</span>
+          <img id="bangsPrevImg" />
+          <span class="previewName" id="bangsPrevName"></span>
+        </div>
+
+        <div class="bangsPreviewCard current" id="bangsCurrentCard">
+          <span class="previewLabel">Current</span>
+          <img id="bangsCurrentImg" />
+          <span class="previewName" id="bangsCurrentName"></span>
+        </div>
+
+        <div class="bangsPreviewCard" id="bangsNextCard">
+          <span class="previewLabel">Next</span>
+          <img id="bangsNextImg" />
+          <span class="previewName" id="bangsNextName"></span>
+        </div>
+      </div>
+    </div>
+
+<!--HAIR-->
+      <div class="buttonBoxhair">
+      <button onclick="nexthair()">hair➡</button>
+
+      <div id="hairCarousel">
+        <div class="hairPreviewCard" id="hairPrevCard">
+          <span class="previewLabel">Previous</span>
+          <img id="hairPrevImg" />
+          <span class="previewName" id="hairPrevName"></span>
+        </div>
+
+        <div class="hairPreviewCard current" id="hairCurrentCard">
+          <span class="previewLabel">Current</span>
+          <img id="hairCurrentImg" />
+          <span class="previewName" id="hairCurrentName"></span>
+        </div>
+
+        <div class="hairPreviewCard" id="hairNextCard">
+          <span class="previewLabel">Next</span>
+          <img id="hairNextImg" />
+          <span class="previewName" id="hairNextName"></span>
+        </div>
+      </div>
+    </div>
+
+<!--FACE-->
+      <div class="buttonBoxface">
+      <button onclick="nextface()">face➡</button>
+
+      <div id="faceCarousel">
+        <div class="facePreviewCard" id="facePrevCard">
+          <span class="previewLabel">Previous</span>
+          <img id="facePrevImg" />
+          <span class="previewName" id="facePrevName"></span>
+        </div>
+
+        <div class="facePreviewCard current" id="faceCurrentCard">
+          <span class="previewLabel">Current</span>
+          <img id="faceCurrentImg" />
+          <span class="previewName" id="faceCurrentName"></span>
+        </div>
+
+        <div class="facePreviewCard" id="faceNextCard">
+          <span class="previewLabel">Next</span>
+          <img id="faceNextImg" />
+          <span class="previewName" id="faceNextName"></span>
+        </div>
+      </div>
+    </div>
+
+<!--SHIRT-->
+      <div class="buttonBoxshirt">
+        <button id="nextshirt" onclick="nextshirt()">shirt➡</button>
+
+         <div id="shirtCarousel" aria-label="Shirt preview carousel">
         <div class="shirtPreviewCard" id="shirtPrevCard">
           <span class="previewLabel">Previous</span>
           <img id="shirtPrevImg" alt="Previous shirt option" />
@@ -42,6 +114,59 @@
           <img id="shirtNextImg" alt="Next shirt option" />
           <span class="previewName" id="shirtNextName"></span>
         </div>
+      </div>
+
+<!--BOTTOMS-->
+      <div class="buttonBoxbottoms">
+      <button id="nextbottoms" onclick="nextbottoms()">bottoms➡</button>
+
+      <div id="bottomsCarousel">
+        <div class="bottomsPreviewCard" id="bottomsPrevCard">
+          <span class="previewLabel">Previous</span>
+          <img id="bottomsPrevImg" />
+          <span class="previewName" id="bottomsPrevName"></span>
+        </div>
+
+        <div class="bottomsPreviewCard current" id="bottomsCurrentCard">
+          <span class="previewLabel">Current</span>
+          <img id="bottomsCurrentImg" />
+          <span class="previewName" id="bottomsCurrentName"></span>
+        </div>
+
+        <div class="bottomsPreviewCard" id="bottomsNextCard">
+          <span class="previewLabel">Next</span>
+          <img id="bottomsNextImg" />
+          <span class="previewName" id="bottomsNextName"></span>
+        </div>
+      </div>
+    </div>
+
+<!--SHOES-->
+      <div class="buttonBoxshoes">
+      <button id="nextshoes" onclick="nextshoes()">shoes➡</button>
+
+      <div id="shoesCarousel">
+        <div class="shoesPreviewCard" id="shoesPrevCard">
+          <span class="previewLabel">Previous</span>
+          <img id="shoesPrevImg" />
+          <span class="previewName" id="shoesPrevName"></span>
+        </div>
+
+        <div class="shoesPreviewCard current" id="shoesCurrentCard">
+          <span class="previewLabel">Current</span>
+          <img id="shoesCurrentImg" />
+          <span class="previewName" id="shoesCurrentName"></span>
+        </div>
+
+        <div class="shoesPreviewCard" id="shoesNextCard">
+          <span class="previewLabel">Next</span>
+          <img id="shoesNextImg" />
+          <span class="previewName" id="shoesNextName"></span>
+        </div>
+      </div>
+    </div>
+</div>
+     
 
         
       </div>
