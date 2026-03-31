@@ -314,8 +314,9 @@ body {
 }
 
 button {
-  margin-top: 2em;
+  margin-top: em;
   margin-right: 0.4em;
+  margin-bottom: 7px;
   color: #5c2b66;
   background: linear-gradient(145deg, #ffe6f4, #f8d6ff);
   box-shadow: 0px 3px 8px rgba(218, 157, 220, 0.6);
