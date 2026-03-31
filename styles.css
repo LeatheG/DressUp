@@ -36,6 +36,30 @@ body {
   height: 92.5%;
   width: 70%;
 }
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 0.3rem;
+  color: #b35fa3;
+  font-size: 1.3rem;
+  font-family: "Trebuchet MS";
+  letter-spacing: 1px;
+  text-shadow: 0px 1px 3px rgba(255, 200, 240, 0.8);
+}
+
+.carouselRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.sideBtn {
+  margin-top: 0;
+  padding: 6px 10px;
+  font-size: 18px;
+}
+
 #linksBox {
   text-align: center;
   margin: auto;
