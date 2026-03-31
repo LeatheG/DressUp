@@ -39,7 +39,7 @@ body {
 
 .sectionTitle {
   text-align: center;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.1rem;
   color: #b35fa3;
   font-size: 1.3rem;
   font-family: "Trebuchet MS";
@@ -95,11 +95,10 @@ body {
 
 .listofoptions {
   position: absolute;
-  top: 2em;
+  top: -50px;
   left: 900px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 
 /* BANGS PREVIEW CARDS */
