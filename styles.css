@@ -1,22 +1,29 @@
 body {
-  background-color: rgb(184, 73, 106);
+  background-color: #DAF2D4;
   background-image: linear-gradient(
     -10deg,
-    #813d76 0%,
-    #c953a2 58%,
-    #f36ec4 100%
+    #BBC6EE 0%,
+    #DFC9F2 58%,
+    #FFD2D0 100%
   );
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 #box {
-  background-color: rgb(247, 150, 208);
   border-radius: 20px;
   margin-left: 2rem;
   margin-right: auto;
   text-align: center;
-  height: 800px;
-  width: 600px;
+  min-height: 800px;
+  width: 880px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  grid-template-rows: auto 1fr;
+  row-gap: 1rem;
+  column-gap: 5.5rem;
+  align-items: start;
 }
 #linksBox {
   text-align: center;
@@ -43,17 +50,21 @@ body {
   font-family: "j'aime le poisson !", "Trebuchet ms";
 }
 #backdrop {
-  top: 2em;
-  margin: auto;
+  top: 0;
+  margin: 0;
   position: relative;
   background-color: rgb(246, 240, 255);
   border-radius: 20px;
   height: 750px;
   width: 400px;
+  grid-column: 1;
+  grid-row: 1 / span 2;
 }
 .buttonBox {
   position: relative;
-  margin: 1rem;
+  margin: 0;
+  grid-column: 2;
+  grid-row: 1;
 }
 
 #shirtCarousel {
@@ -61,8 +72,10 @@ body {
   justify-content: center;
   align-items: stretch;
   gap: 0.7rem;
-  margin: 1rem auto;
-  width: 92%;
+  margin: 0;
+  width: 100%;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .shirtPreviewCard {
