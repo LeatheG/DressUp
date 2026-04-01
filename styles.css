@@ -12,13 +12,13 @@ body {
   background-attachment: fixed;
 }
 #box {
-   background-color: #d2b4ec;
+  background-color: #d2b4ec;
   border: 2px solid rgb(107, 102, 102);
   border-radius: 7px;
   margin-left: 125px;
   margin-top: 25px;
   text-align: center;
- height: 860px;
+  height: 860px;
   width: 650px;
   position: absolute;
   padding-top: 30px;
@@ -39,8 +39,9 @@ body {
 
 .sectionTitle {
   text-align: center;
-  margin-bottom: 0.1rem;
+  margin-bottom: -0.1rem;
   color: #b35fa3;
+  margin-top: 1px;
   font-size: 1.3rem;
   font-family: "Trebuchet MS";
   letter-spacing: 1px;
@@ -51,7 +52,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.3rem;
 }
 
 .sideBtn {
@@ -103,6 +104,59 @@ body {
   flex-direction: column;
 }
 
+.buttonBoxbangs,
+.buttonBoxhair,
+.buttonBoxface,
+.buttonBoxshirt,
+.buttonBoxbottoms,
+.buttonBoxshoes {
+  background-color: #efe3fa;
+  border-radius: 20px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.12);
+}
+
+.buttonBoxskin {
+  position: absolute;
+  top: 0px;
+  left: 100%;
+  margin-left: 80px;
+  
+}
+
+#skinOptionsRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  background-color: #efe3fa;
+  border-radius: 20px;
+  padding: 2rem 2rem;
+  width: fit-content;
+  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.12);
+}
+
+.skinBtn {
+  
+  margin: 0;
+  padding: 1rem;
+  border: 2px solid #DFC9F2;
+  border-radius: 14px;
+  background-color: #fff8fd;
+  cursor: pointer;
+}
+
+.skinBtn img {
+  
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  display: block;
+  background-color: white;
+  border-radius: 10px;
+}
+
 #skin {
   background-repeat: no-repeat;
   position: absolute;
@@ -124,7 +178,7 @@ body {
 }
 
 .bangsPreviewCard {
-  background-color: rgba(255, 240, 251, 0.855);
+  background-color: #fff8fd;
   border: 2px solid #DFC9F2;
   border-radius: 20px;
   box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
@@ -373,8 +427,7 @@ button:hover {
   width: 400px;
 }
 #girl {
-  background-image: url("./images4/skin1.png");
-  background-repeat: no-repeat;
+  background-image: url("./images4/1.png");
   background-repeat: no-repeat;
   position: absolute;
   height: 750px;
@@ -502,19 +555,21 @@ button:hover {
 
 /* SHOES IMAGES */
 .shoes1 {
-  background-image: url("./images4/shoes1 2.png");
+  background-image: url("./images4/shoes1.png");
   background-repeat: no-repeat;
   position: absolute;
   height: 750px;
   width: 400px;
 }
+
 .shoes2 {
-  background-image: url("./images4/shoes2 2.png");
+  background-image: url("./images4/shoes2.png");
   background-repeat: no-repeat;
   position: absolute;
   height: 750px;
   width: 400px;
 }
+
 .shoes3 {
   background-image: url("./images4/shoes3.png");
   background-repeat: no-repeat;
@@ -615,6 +670,55 @@ button:hover {
   width: 400px;
 }
 
+/* SKIN IMAGES */
+.skin1 {
+  background-image: url("./images4/skin1.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 750px;
+  width: 400px;
+}
+
+.skin2 {
+  background-image: url("./images4/skin2.PNG");
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 750px;
+  width: 400px;
+}
+
+.skin3 {
+  background-image: url("./images4/skin3.PNG");
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 750px;
+  width: 400px;
+}
+
+.skin4 {
+  background-image: url("./images4/skin4.PNG");
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 750px;
+  width: 400px;
+}
+
+.skin5 {
+  background-image: url("./images4/skin5.PNG");
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 750px;
+  width: 400px;
+}
+
+.skin6 {
+  background-image: url("./images4/skin6.PNG");
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 750px;
+  width: 400px;
+}
+
 .faceRow {
   display: flex;
   align-items: center;
@@ -628,7 +732,6 @@ button:hover {
   gap: 0.rem;
   width: auto;
 }
-
 
 
 /* PHONE CAMPATABILITY LATER? */
