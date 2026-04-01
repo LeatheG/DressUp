@@ -62,47 +62,131 @@ function nextValue(current, count) {
 
 /* ---------- BOTTOMS ---------- */
 
-function updateBottomsCarousel() {
-  const prev = getPreviewIndex(state.bottoms, BOTTOMS_COUNT, -1);
-  const current = getPreviewIndex(state.bottoms, BOTTOMS_COUNT, 0);
-  const next = getPreviewIndex(state.bottoms, BOTTOMS_COUNT, 1);
+function getBottomsIndex(current, offset) {
+  let index = current + offset;
 
-  setPreview("bottomsPrevImg", "bottomsPrevName", `./images4/bottoms${prev}.png`, `Bottoms ${prev}`);
-  setPreview("bottomsCurrentImg", "bottomsCurrentName", `./images4/bottoms${current}.png`, `Bottoms ${current}`);
-  setPreview("bottomsNextImg", "bottomsNextName", `./images4/bottoms${next}.png`, `Bottoms ${next}`);
+  while (index < 1) {
+    index += BOTTOMS_COUNT;
+  }
+
+  while (index > BOTTOMS_COUNT) {
+    index -= BOTTOMS_COUNT;
+  }
+
+  return index;
+}
+
+function setBottomsPreview(imgId, nameId, index) {
+  const img = document.getElementById(imgId);
+  const name = document.getElementById(nameId);
+
+  if (!img || !name) {
+    return;
+  }
+
+  img.src = `./images4/bottoms${index}.png`;
+  name.textContent = `Bottoms ${index}`;
+}
+
+function updateBottomsCarousel() {
+  const farPrev = getBottomsIndex(state.bottoms, -2);
+  const prev = getBottomsIndex(state.bottoms, -1);
+  const current = state.bottoms;
+  const next = getBottomsIndex(state.bottoms, 1);
+  const farNext = getBottomsIndex(state.bottoms, 2);
+
+  setBottomsPreview("bottomsFarPrevImg", "bottomsFarPrevName", farPrev);
+  setBottomsPreview("bottomsPrevImg", "bottomsPrevName", prev);
+  setBottomsPreview("bottomsCurrentImg", "bottomsCurrentName", current);
+  setBottomsPreview("bottomsNextImg", "bottomsNextName", next);
+  setBottomsPreview("bottomsFarNextImg", "bottomsFarNextName", farNext);
 }
 
 function nextbottoms() {
-  state.bottoms = nextValue(state.bottoms, BOTTOMS_COUNT);
-  setLayerClass("bottoms", "bottoms", state.bottoms);
+  if (state.bottoms < BOTTOMS_COUNT) {
+    state.bottoms++;
+  } else {
+    state.bottoms = 1;
+  }
+
+  document.querySelector("#bottoms")
+    .setAttribute("class", `bottoms${state.bottoms}`);
+
+  updateBottomsCarousel();
+}
+
+function prevbottoms() {
+  if (state.bottoms > 1) {
+    state.bottoms--;
+  } else {
+    state.bottoms = BOTTOMS_COUNT;
+  }
+
+  document.querySelector("#bottoms")
+    .setAttribute("class", `bottoms${state.bottoms}`);
+
   updateBottomsCarousel();
 }
 
 /* ---------- SHOES ---------- */
 
-function getShoesImagePath(index) {
-  if (index === 1) {
-    return "./images4/shoes1 2.png";
+function getShoesIndex(current, offset) {
+  let index = current + offset;
+
+  while (index < 1) {
+    index += SHOES_COUNT;
   }
-  if (index === 2) {
-    return "./images4/shoes2 2.png";
+
+  while (index > SHOES_COUNT) {
+    index -= SHOES_COUNT;
   }
-  return "./images4/shoes3.png";
+
+  return index;
+}
+
+function setShoesPreview(imgId, nameId, index) {
+  const img = document.getElementById(imgId);
+  const name = document.getElementById(nameId);
+
+  if (!img || !name) return;
+
+  img.src = `./images4/shoes${index}.png`;
+  name.textContent = `Shoes ${index}`;
 }
 
 function updateShoesCarousel() {
-  const prev = getPreviewIndex(state.shoes, SHOES_COUNT, -1);
-  const current = getPreviewIndex(state.shoes, SHOES_COUNT, 0);
-  const next = getPreviewIndex(state.shoes, SHOES_COUNT, 1);
+  const prev = getShoesIndex(state.shoes, -1);
+  const current = state.shoes;
+  const next = getShoesIndex(state.shoes, 1);
 
-  setPreview("shoesPrevImg", "shoesPrevName", getShoesImagePath(prev), `Shoes ${prev}`);
-  setPreview("shoesCurrentImg", "shoesCurrentName", getShoesImagePath(current), `Shoes ${current}`);
-  setPreview("shoesNextImg", "shoesNextName", getShoesImagePath(next), `Shoes ${next}`);
+  setShoesPreview("shoesPrevImg", "shoesPrevName", prev);
+  setShoesPreview("shoesCurrentImg", "shoesCurrentName", current);
+  setShoesPreview("shoesNextImg", "shoesNextName", next);
 }
 
 function nextshoes() {
-  state.shoes = nextValue(state.shoes, SHOES_COUNT);
-  setLayerClass("shoes", "shoes", state.shoes);
+  if (state.shoes < SHOES_COUNT) {
+    state.shoes++;
+  } else {
+    state.shoes = 1;
+  }
+
+  document.querySelector("#shoes")
+    .setAttribute("class", `shoes${state.shoes}`);
+
+  updateShoesCarousel();
+}
+
+function prevshoes() {
+  if (state.shoes > 1) {
+    state.shoes--;
+  } else {
+    state.shoes = SHOES_COUNT;
+  }
+
+  document.querySelector("#shoes")
+    .setAttribute("class", `shoes${state.shoes}`);
+
   updateShoesCarousel();
 }
 
@@ -124,56 +208,231 @@ function nextbangs() {
   updateBangsCarousel();
 }
 
+function getBangsIndex(current, offset) {
+  let index = current + offset;
+
+  while (index < 1) {
+    index += BANGS_COUNT;
+  }
+
+  while (index > BANGS_COUNT) {
+    index -= BANGS_COUNT;
+  }
+
+  return index;
+}
+
+function setBangsPreview(imgId, nameId, index) {
+  const img = document.getElementById(imgId);
+  const name = document.getElementById(nameId);
+
+  if (!img || !name) return;
+
+  img.src = `./images4/bangs${index}.png`;
+  name.textContent = `Bangs ${index}`;
+}
+
+function updateBangsCarousel() {
+  const prev = getBangsIndex(state.bangs, -1);
+  const current = state.bangs;
+  const next = getBangsIndex(state.bangs, 1);
+
+  setBangsPreview("bangsPrevImg", "bangsPrevName", prev);
+  setBangsPreview("bangsCurrentImg", "bangsCurrentName", current);
+  setBangsPreview("bangsNextImg", "bangsNextName", next);
+}
+
+function nextbangs() {
+  if (state.bangs < BANGS_COUNT) {
+    state.bangs++;
+  } else {
+    state.bangs = 1;
+  }
+
+  document.querySelector("#bangs")
+    .setAttribute("class", `bangs${state.bangs}`);
+
+  updateBangsCarousel();
+}
+
+function prevbangs() {
+  if (state.bangs > 1) {
+    state.bangs--;
+  } else {
+    state.bangs = BANGS_COUNT;
+  }
+
+  document.querySelector("#bangs")
+    .setAttribute("class", `bangs${state.bangs}`);
+
+  updateBangsCarousel();
+}
+
 /* ---------- HAIR ---------- */
 
 function updateHairCarousel() {
-  const prev = getPreviewIndex(state.hair, HAIR_COUNT, -1);
-  const current = getPreviewIndex(state.hair, HAIR_COUNT, 0);
-  const next = getPreviewIndex(state.hair, HAIR_COUNT, 1);
+  const farPrev = getHairIndex(state.hair, -2);
+  const prev = getHairIndex(state.hair, -1);
+  const current = state.hair;
+  const next = getHairIndex(state.hair, 1);
+  const farNext = getHairIndex(state.hair, 2);
 
-  setPreview("hairPrevImg", "hairPrevName", `./images4/hair${prev}.png`, `Hair ${prev}`);
-  setPreview("hairCurrentImg", "hairCurrentName", `./images4/hair${current}.png`, `Hair ${current}`);
-  setPreview("hairNextImg", "hairNextName", `./images4/hair${next}.png`, `Hair ${next}`);
+  setHairPreview("hairFarPrevImg", "hairFarPrevName", farPrev);
+  setHairPreview("hairPrevImg", "hairPrevName", prev);
+  setHairPreview("hairCurrentImg", "hairCurrentName", current);
+  setHairPreview("hairNextImg", "hairNextName", next);
+  setHairPreview("hairFarNextImg", "hairFarNextName", farNext);
+}
+
+function prevhair() {
+  if (state.hair > 1) {
+    state.hair--;
+  } else {
+    state.hair = HAIR_COUNT;
+  }
+
+  document.querySelector("#hair")
+    .setAttribute("class", `hair${state.hair - 1}`);
+
+  updateHairCarousel();
 }
 
 function nexthair() {
-  state.hair = nextValue(state.hair, HAIR_COUNT);
-  setLayerClass("hair", "hair", state.hair);
+  if (state.hair < HAIR_COUNT) {
+    state.hair++;
+  } else {
+    state.hair = 1;
+  }
+
+  document.querySelector("#hair")
+    .setAttribute("class", `hair${state.hair - 1}`);
+
   updateHairCarousel();
+}
+
+function getHairIndex(current, offset) {
+  let index = current + offset;
+
+  if (index < 1) index += HAIR_COUNT;
+  if (index > HAIR_COUNT) index -= HAIR_COUNT;
+
+  return index;
+}
+
+function setHairPreview(imgId, nameId, index) {
+  const img = document.getElementById(imgId);
+  const name = document.getElementById(nameId);
+
+  img.src = `./images4/hair${index - 1}.png`; // ← FIX
+  name.textContent = `Hair ${index}`;
 }
 
 /* ---------- SHIRT ---------- */
 
-function updateShirtCarousel() {
-  const prev = getPreviewIndex(state.shirt, SHIRT_COUNT, -1);
-  const current = getPreviewIndex(state.shirt, SHIRT_COUNT, 0);
-  const next = getPreviewIndex(state.shirt, SHIRT_COUNT, 1);
+function getShirtIndex(current, offset) {
+  let index = current + offset;
 
-  setPreview("shirtPrevImg", "shirtPrevName", `./images4/shirt${prev}.png`, `Shirt ${prev}`);
-  setPreview("shirtCurrentImg", "shirtCurrentName", `./images4/shirt${current}.png`, `Shirt ${current}`);
-  setPreview("shirtNextImg", "shirtNextName", `./images4/shirt${next}.png`, `Shirt ${next}`);
+  while (index < 1) {
+    index += SHIRT_COUNT;
+  }
+
+  while (index > SHIRT_COUNT) {
+    index -= SHIRT_COUNT;
+  }
+
+  return index;
+}
+
+function setShirtPreview(imgId, nameId, index) {
+  const img = document.getElementById(imgId);
+  const name = document.getElementById(nameId);
+
+  if (!img || !name) {
+    return;
+  }
+
+  img.src = `./images4/shirt${index}.png`;
+  name.textContent = `Shirt ${index}`;
+}
+
+function updateShirtCarousel() {
+  const prev = getShirtIndex(state.shirt, -1);
+  const current = state.shirt;
+  const next = getShirtIndex(state.shirt, 1);
+  const next2 = getShirtIndex(state.shirt, 2);
+
+  setShirtPreview("shirtPrevImg", "shirtPrevName", prev);
+  setShirtPreview("shirtCurrentImg", "shirtCurrentName", current);
+  setShirtPreview("shirtNextImg", "shirtNextName", next);
+  setShirtPreview("shirtNext2Img", "shirtNext2Name", next2);
 }
 
 function nextshirt() {
-  state.shirt = nextValue(state.shirt, SHIRT_COUNT);
-  setLayerClass("shirt", "shirt", state.shirt);
+  if (state.shirt < SHIRT_COUNT) {
+    state.shirt++;
+  } else {
+    state.shirt = 1;
+  }
+
+  document.querySelector("#shirt").setAttribute("class", `shirt${state.shirt}`);
+  updateShirtCarousel();
+}
+
+function prevshirt() {
+  if (state.shirt > 1) {
+    state.shirt--;
+  } else {
+    state.shirt = SHIRT_COUNT;
+  }
+
+  document.querySelector("#shirt").setAttribute("class", `shirt${state.shirt}`);
   updateShirtCarousel();
 }
 
 /* ---------- FACE ---------- */
 
-function updateFaceCarousel() {
-  const prev = getPreviewIndex(state.face, FACE_COUNT, -1);
-  const current = getPreviewIndex(state.face, FACE_COUNT, 0);
-  const next = getPreviewIndex(state.face, FACE_COUNT, 1);
+function getOtherFace(current) {
+  return current === 1 ? 2 : 1;
+}
 
-  setPreview("facePrevImg", "facePrevName", `./images4/face${prev}.png`, `Face ${prev}`);
-  setPreview("faceCurrentImg", "faceCurrentName", `./images4/face${current}.png`, `Face ${current}`);
-  setPreview("faceNextImg", "faceNextName", `./images4/face${next}.png`, `Face ${next}`);
+function setFacePreview(imgId, nameId, index) {
+  const img = document.getElementById(imgId);
+  const name = document.getElementById(nameId);
+
+  img.src = `./images4/face${index}.png`;
+  name.textContent = `Face ${index}`;
+}
+
+function updateFaceCarousel() {
+  const current = state.face;
+  const other = getOtherFace(current);
+
+  setFacePreview("faceCurrentImg", "faceCurrentName", current);
+  setFacePreview("faceOtherImg", "faceOtherName", other);
 }
 
 function nextface() {
-  state.face = nextValue(state.face, FACE_COUNT);
-  setLayerClass("face", "face", state.face);
+  if (state.face < FACE_COUNT) {
+    state.face++;
+  } else {
+    state.face = 1;
+  }
+
+  document.querySelector("#face")
+    .setAttribute("class", `face${state.face}`);
+
+  updateFaceCarousel();
+}
+
+function prevface() {
+  if (state.face > 1) {
+    state.face--;
+  } else {
+    state.face = FACE_COUNT;
+  }
+
+  document.querySelector("#face")
+    .setAttribute("class", `face${state.face}`);
+
   updateFaceCarousel();
 }

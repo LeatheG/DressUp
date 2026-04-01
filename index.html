@@ -21,204 +21,193 @@
 <div class="listofoptions">
 
 <!--BANGS-->
-  <div class="buttonBoxbangs">
-
+<div class="buttonBoxbangs">
   <h3 class="sectionTitle">BANGS</h3>
 
-  <div class="carouselRow">
-    
-    <button class="sideBtn" onclick="nextbangs()">◀</button>
+  <div class="carouselRow bangsRow">
+    <button class="sideBtn bangsSideBtn" onclick="prevbangs()">◀</button>
 
     <div id="bangsCarousel">
       <div class="bangsPreviewCard" id="bangsPrevCard">
-        <span class="previewLabel">Previous</span>
         <img id="bangsPrevImg" />
         <span class="previewName" id="bangsPrevName"></span>
       </div>
 
       <div class="bangsPreviewCard current" id="bangsCurrentCard">
-        <span class="previewLabel">Current</span>
         <img id="bangsCurrentImg" />
         <span class="previewName" id="bangsCurrentName"></span>
       </div>
 
       <div class="bangsPreviewCard" id="bangsNextCard">
-        <span class="previewLabel">Next</span>
         <img id="bangsNextImg" />
         <span class="previewName" id="bangsNextName"></span>
       </div>
     </div>
 
-    <button class="sideBtn" onclick="nextbangs()">▶</button>
-
+    <button class="sideBtn bangsSideBtn" onclick="nextbangs()">▶</button>
   </div>
-
 </div>
 
 <!--HAIR-->
-      <div class="buttonBoxhair">
-
+<div class="buttonBoxhair">
   <h3 class="sectionTitle">HAIR</h3>
 
-  <div class="carouselRow">
-    <button class="sideBtn" onclick="nexthair()">◀</button>
+  <div class="carouselRow hairRow">
+    <button class="sideBtn hairSideBtn" onclick="prevhair()">◀</button>
 
     <div id="hairCarousel">
+      <div class="hairPreviewCard" id="hairFarPrevCard">
+        <img id="hairFarPrevImg" />
+        <span class="previewName" id="hairFarPrevName"></span>
+      </div>
+
       <div class="hairPreviewCard" id="hairPrevCard">
-        <span class="previewLabel">Previous</span>
         <img id="hairPrevImg" />
         <span class="previewName" id="hairPrevName"></span>
       </div>
 
       <div class="hairPreviewCard current" id="hairCurrentCard">
-        <span class="previewLabel">Current</span>
         <img id="hairCurrentImg" />
         <span class="previewName" id="hairCurrentName"></span>
       </div>
 
       <div class="hairPreviewCard" id="hairNextCard">
-        <span class="previewLabel">Next</span>
         <img id="hairNextImg" />
         <span class="previewName" id="hairNextName"></span>
       </div>
+
+      <div class="hairPreviewCard" id="hairFarNextCard">
+        <img id="hairFarNextImg" />
+        <span class="previewName" id="hairFarNextName"></span>
+      </div>
     </div>
 
-    <button class="sideBtn" onclick="nexthair()">▶</button>
+    <button class="sideBtn hairSideBtn" onclick="nexthair()">▶</button>
   </div>
-
 </div>
 
 <!--FACE-->
- <div class="buttonBoxface">
+<div class="buttonBoxface">
 
   <h3 class="sectionTitle">FACE</h3>
 
-  <div class="carouselRow">
-    <button class="sideBtn" onclick="nextface()">◀</button>
+  <div class="carouselRow faceRow">
+    <button class="sideBtn faceSideBtn" onclick="prevface()">◀</button>
 
     <div id="faceCarousel">
-      <div class="facePreviewCard" id="facePrevCard">
-        <span class="previewLabel">Previous</span>
-        <img id="facePrevImg" />
-        <span class="previewName" id="facePrevName"></span>
-      </div>
-
       <div class="facePreviewCard current" id="faceCurrentCard">
-        <span class="previewLabel">Current</span>
         <img id="faceCurrentImg" />
         <span class="previewName" id="faceCurrentName"></span>
       </div>
 
-      <div class="facePreviewCard" id="faceNextCard">
-        <span class="previewLabel">Next</span>
-        <img id="faceNextImg" />
-        <span class="previewName" id="faceNextName"></span>
+      <div class="facePreviewCard" id="faceOtherCard">
+        <img id="faceOtherImg" />
+        <span class="previewName" id="faceOtherName"></span>
       </div>
     </div>
 
-    <button class="sideBtn" onclick="nextface()">▶</button>
+    <button class="sideBtn faceSideBtn" onclick="nextface()">▶</button>
   </div>
 
 </div>
 
 <!--SHIRT-->
-  <div class="buttonBoxshirt">
-
+<div class="buttonBoxshirt">
   <h3 class="sectionTitle">SHIRT</h3>
 
-  <div class="carouselRow">
-    <button class="sideBtn" onclick="nextshirt()">◀</button>
+  <div class="carouselRow shirtRow">
+    <button class="sideBtn shirtSideBtn" onclick="prevshirt()">◀</button>
 
     <div id="shirtCarousel">
       <div class="shirtPreviewCard" id="shirtPrevCard">
-        <span class="previewLabel">Previous</span>
         <img id="shirtPrevImg" />
         <span class="previewName" id="shirtPrevName"></span>
       </div>
 
       <div class="shirtPreviewCard current" id="shirtCurrentCard">
-        <span class="previewLabel">Current</span>
         <img id="shirtCurrentImg" />
         <span class="previewName" id="shirtCurrentName"></span>
       </div>
 
       <div class="shirtPreviewCard" id="shirtNextCard">
-        <span class="previewLabel">Next</span>
         <img id="shirtNextImg" />
         <span class="previewName" id="shirtNextName"></span>
       </div>
+
+      <div class="shirtPreviewCard" id="shirtNext2Card">
+        <img id="shirtNext2Img" />
+        <span class="previewName" id="shirtNext2Name"></span>
+      </div>
     </div>
 
-    <button class="sideBtn" onclick="nextshirt()">▶</button>
+    <button class="sideBtn shirtSideBtn" onclick="nextshirt()">▶</button>
   </div>
-
 </div>
 
 <!--BOTTOMS-->
-     <div class="buttonBoxbottoms">
-
+<div class="buttonBoxbottoms">
   <h3 class="sectionTitle">BOTTOMS</h3>
 
-  <div class="carouselRow">
-    <button class="sideBtn" onclick="nextbottoms()">◀</button>
+  <div class="carouselRow bottomsRow">
+    <button class="sideBtn bottomsSideBtn" onclick="prevbottoms()">◀</button>
 
     <div id="bottomsCarousel">
+      <div class="bottomsPreviewCard" id="bottomsFarPrevCard">
+        <img id="bottomsFarPrevImg" />
+        <span class="previewName" id="bottomsFarPrevName"></span>
+      </div>
+
       <div class="bottomsPreviewCard" id="bottomsPrevCard">
-        <span class="previewLabel">Previous</span>
         <img id="bottomsPrevImg" />
         <span class="previewName" id="bottomsPrevName"></span>
       </div>
 
       <div class="bottomsPreviewCard current" id="bottomsCurrentCard">
-        <span class="previewLabel">Current</span>
         <img id="bottomsCurrentImg" />
         <span class="previewName" id="bottomsCurrentName"></span>
       </div>
 
       <div class="bottomsPreviewCard" id="bottomsNextCard">
-        <span class="previewLabel">Next</span>
         <img id="bottomsNextImg" />
         <span class="previewName" id="bottomsNextName"></span>
       </div>
+
+      <div class="bottomsPreviewCard" id="bottomsFarNextCard">
+        <img id="bottomsFarNextImg" />
+        <span class="previewName" id="bottomsFarNextName"></span>
+      </div>
     </div>
 
-    <button class="sideBtn" onclick="nextbottoms()">▶</button>
+    <button class="sideBtn bottomsSideBtn" onclick="nextbottoms()">▶</button>
   </div>
-
 </div>
 
 <!--SHOES-->
-    <div class="buttonBoxshoes">
-
+<div class="buttonBoxshoes">
   <h3 class="sectionTitle">SHOES</h3>
 
-  <div class="carouselRow">
-    <button class="sideBtn" onclick="nextshoes()">◀</button>
+  <div class="carouselRow shoesRow">
+    <button class="sideBtn shoesSideBtn" onclick="prevshoes()">◀</button>
 
     <div id="shoesCarousel">
       <div class="shoesPreviewCard" id="shoesPrevCard">
-        <span class="previewLabel">Previous</span>
         <img id="shoesPrevImg" />
         <span class="previewName" id="shoesPrevName"></span>
       </div>
 
       <div class="shoesPreviewCard current" id="shoesCurrentCard">
-        <span class="previewLabel">Current</span>
         <img id="shoesCurrentImg" />
         <span class="previewName" id="shoesCurrentName"></span>
       </div>
 
       <div class="shoesPreviewCard" id="shoesNextCard">
-        <span class="previewLabel">Next</span>
         <img id="shoesNextImg" />
         <span class="previewName" id="shoesNextName"></span>
       </div>
     </div>
 
-    <button class="sideBtn" onclick="nextshoes()">▶</button>
+    <button class="sideBtn shoesSideBtn" onclick="nextshoes()">▶</button>
   </div>
-
-</div>
 </div>
      
 
