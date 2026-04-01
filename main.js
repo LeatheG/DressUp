@@ -6,6 +6,7 @@ let state = {
   accessory: 0,
   face: 1,
   bangs: 1,
+  skin: 1,
 };
 
 const BOTTOMS_COUNT = 5;
@@ -21,6 +22,7 @@ setLayerClass("hair", "hair", state.hair);
 setLayerClass("shirt", "shirt", state.shirt);
 setLayerClass("face", "face", state.face);
 setLayerClass("bangs", "bangs", state.bangs);
+setLayerClass("skin", "skin", state.skin);
 
 updateBottomsCarousel();
 updateShoesCarousel();
@@ -36,6 +38,8 @@ function setLayerClass(elementId, classPrefix, value) {
   }
   element.setAttribute("class", `${classPrefix}${value}`);
 }
+
+
 
 function getPreviewIndex(current, count, indexOffset) {
   return ((current - 1 + indexOffset + count) % count) + 1;
@@ -326,6 +330,15 @@ function setHairPreview(imgId, nameId, index) {
   img.src = `./images4/hair${index - 1}.png`; // ← FIX
   name.textContent = `Hair ${index}`;
 }
+
+/* ---------- SKIN ---------- */
+
+
+function setskin(number) {
+  state.skin = number;
+  document.querySelector("#skin").setAttribute("class", `skin${number}`);
+}
+
 
 /* ---------- SHIRT ---------- */
 
