@@ -473,6 +473,45 @@ button:hover {
   z-index: 7;
 }
 
+#bangs {
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 750px;
+  width: 400px;
+  top: 21px;
+  left: 19px;
+  z-index: 7;
+}
+
+/* BANGS IMAGES */
+
+.bangs1 {
+  background-image: url("./images4/bangs1.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 750px;
+  width: 400px;
+  z-index: 7;
+}
+
+.bangs2 {
+  background-image: url("./images4/bangs2.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 750px;
+  width: 400px;
+  z-index: 7;
+}
+
+.bangs3 {
+  background-image: url("./images4/bangs3.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 750px;
+  width: 400px;
+  z-index: 7;
+}
+
 /* BOTTOMS IMAGES */
 .bottoms1 {
   background-image: url("./images4/bottoms1.png");
