@@ -2,50 +2,223 @@ body {
   background-color: #DAF2D4;
   background-image: linear-gradient(
     -10deg,
-   #FFE1B4 0%,  
-    #DFC9F2 25%, 
-    #BBC6EE 50%,  
-    #DAF2D4 75%,  
-    #FFD2D0 100%  
+    #FFE1B4 0%,
+    #DFC9F2 25%,
+    #BBC6EE 50%,
+    #DAF2D4 75%,
+    #FFD2D0 100%
   );
   background-repeat: no-repeat;
   background-attachment: fixed;
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px;
+  box-sizing: border-box;
 }
-#box {
-  background-color: #d2b4ec;
-  border: 2px solid rgb(107, 102, 102);
-  border-radius: 7px;
-  margin-left: 125px;
-  margin-top: 25px;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#heading {
+  font-size: 30px;
   text-align: center;
-  height: 860px;
-  width: 650px;
-  position: absolute;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  padding-left: 2px;
+  color: snow;
+  text-shadow: 0px 4px 5px rgb(88, 24, 67);
+  font-family: "j'aime le poisson !", "Trebuchet ms";
+  margin: 0 0 10px 0;
+}
+
+#box {
+  width: min(1700px, 96vw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(420px, 540px) minmax(700px, 1fr) 130px 130px;
+  column-gap: clamp(22px, 2vw, 40px);
+  align-items: start;
 }
 
 #backdrop {
+  grid-column: 1;
   border: 2px solid rgb(107, 102, 102);
-  margin-top: 4%;
-  margin-left: 15%;
   position: relative;
   background-color: rgb(246, 240, 255);
   border-radius: 90px;
-  height: 92.5%;
-  width: 70%;
+  width: 89%;
+  aspect-ratio: 455 / 795;
+  overflow: hidden;
+  justify-self: center;
+}
+
+/* CHARACTER LAYERS */
+#girl,
+#shirt,
+#bottoms,
+#shoes,
+#hair,
+#face,
+#skin,
+#bangs {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#girl {
+  background-image: none;
+  z-index: 2;
+}
+
+#skin {
+  z-index: 2;
+  
+  background-size: 87.9% auto;        
+  
+}
+#shoes {
+  z-index: 3;
+}
+
+#bottoms {
+  z-index: 4;
+  margin-left: 0.1%;     
+  background-position: center -2px;  
+}
+
+#shirt {
+  z-index: 5;
+}
+
+#hair {
+  z-index: 1;
+}
+
+#face {
+  z-index: 6;
+}
+
+#bangs {
+  z-index: 7;
+}
+
+.listofoptions {
+  grid-column: 2 / 5;
+  display: grid;
+  grid-template-columns: minmax(680px, 1fr) 130px 130px;
+  column-gap: clamp(18px, 1.8vw, 30px);
+  row-gap: 10px;
+  align-items: start;
+}
+
+.listofoptions > h3.sectionTitle,
+.listofoptions > .buttonBoxbangs,
+.listofoptions > .buttonBoxhair,
+.listofoptions > .buttonBoxshirt,
+.listofoptions > .buttonBoxbottoms,
+.listofoptions > .buttonBoxshoes {
+  grid-column: 1;
+}
+
+/* SKIN COLUMN */
+.buttonBoxskin {
+  grid-column: 3;
+  grid-row: 1 / span 12;
+  align-self: start;
 }
 
 .sectionTitle {
   text-align: center;
-  margin-bottom: -0.1rem;
+  margin: 0;
   color: #b35fa3;
-  margin-top: 1px;
   font-size: 1.3rem;
   font-family: "Trebuchet MS";
   letter-spacing: 1px;
   text-shadow: 0px 1px 3px rgba(255, 200, 240, 0.8);
+}
+
+.buttonBoxbangs,
+.buttonBoxhair,
+.buttonBoxshirt,
+.buttonBoxbottoms,
+.buttonBoxshoes {
+  background-color: #efe3fa;
+  border-radius: 20px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 0.9rem;
+  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.12);
+  width: 100%;
+}
+
+.buttonBoxface {
+  grid-column: 2;
+  grid-row: 1 / span 12;
+  align-self: start;
+}
+
+.buttonBoxskin .sectionTitle {
+  margin-bottom: 8px;
+}
+
+#skinOptionsRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background-color: #efe3fa;
+  border-radius: 20px;
+  padding: 2rem 1rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 100%;
+  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.12);
+}
+
+#faceOptionsRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background-color: #efe3fa;
+  border-radius: 20px;
+  padding: 2rem 2rem;   
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.12);
+}
+
+.buttonBoxface .sectionTitle {
+  margin-bottom: 8px;
+}
+
+.faceBtn {
+  margin: 5%;
+  padding: 1rem;                
+  border: 2px solid #DFC9F2;
+  border-radius: 14px;
+  background-color: #fff8fd;
+  cursor: pointer;
+  box-shadow: 0px 3px 8px rgba(218, 157, 220, 0.6);
+}
+
+.faceBtn img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  display: block;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.faceBtn.selected {
+  border-color: rgba(129, 61, 100, 0.9);
 }
 
 .carouselRow {
@@ -53,12 +226,110 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.3rem;
+  width: 100%;
 }
 
 .sideBtn {
   margin-top: 0;
   padding: 6px 10px;
   font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* CAROUSELS */
+#bangsCarousel,
+#hairCarousel,
+#shirtCarousel,
+#bottomsCarousel,
+#shoesCarousel {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: clamp(0.7rem, 1.4vw, 2rem);
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.bangsPreviewCard,
+.hairPreviewCard,
+.shirtPreviewCard,
+.bottomsPreviewCard,
+.shoesPreviewCard {
+  background-color: rgba(255, 240, 251, 0.855);
+  border: 2px solid #DFC9F2;
+  border-radius: 20px;
+  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
+  padding: 0.3rem;
+  width: clamp(82px, 7vw, 115px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  flex-shrink: 1;
+}
+
+.bangsPreviewCard.current,
+.hairPreviewCard.current,
+.shirtPreviewCard.current,
+.bottomsPreviewCard.current,
+.shoesPreviewCard.current {
+  border-color: rgba(129, 61, 100, 0.9);
+}
+
+.bangsPreviewCard img,
+.hairPreviewCard img,
+.shirtPreviewCard img,
+.bottomsPreviewCard img,
+.shoesPreviewCard img {
+  width: clamp(44px, 4vw, 70px);
+  height: clamp(44px, 4vw, 70px);
+  object-fit: contain;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.skinBtn {
+  margin: 0;
+  padding: 1rem;
+  border: 2px solid #DFC9F2;
+  border-radius: 14px;
+  background-color: #fff8fd;
+  cursor: pointer;
+}
+
+.skinBtn.selected {
+  border-color: rgba(129, 61, 100, 0.9);
+}
+
+.skinBtn img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  display: block;
+  background-color: white;
+  border-radius: 10px;
+}
+
+button {
+  margin-top: 0;
+  margin-right: 0.4em;
+  margin-bottom: 7px;
+  color: #5c2b66;
+  background: linear-gradient(145deg, #ffe6f4, #f8d6ff);
+  box-shadow: 0px 3px 8px rgba(218, 157, 220, 0.6);
+  border-radius: 14px;
+  padding: 6px 14px;
+  border: none;
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
+button:hover {
+  background: linear-gradient(145deg, #ffd6f0, #f3bfff);
+  box-shadow: 0px 6px 14px rgba(218, 157, 220, 0.9);
+  transform: translateY(-3px) scale(1.05);
+  color: #7a2c6a;
 }
 
 #linksBox {
@@ -81,707 +352,154 @@ body {
   opacity: 100%;
 }
 
-#heading {
-  font-size: 30px;
-  text-align: center;
-  color: snow;
-  text-shadow: 0px 4px 5px rgb(88, 24, 67);
-  font-family: "j'aime le poisson !", "Trebuchet ms";
-}
-
-.buttonBox {
-  position: relative;
-  margin-top: 1.5rem;
-  margin-bottom: 1.rem;
-}
-
-
-.listofoptions {
-  position: absolute;
-  top: -5px;
-  left: 750px;
-  display: flex;
-  flex-direction: column;
-}
-
-.buttonBoxbangs,
-.buttonBoxhair,
-.buttonBoxface,
-.buttonBoxshirt,
-.buttonBoxbottoms,
-.buttonBoxshoes {
-  background-color: #efe3fa;
-  border-radius: 20px;
-  padding: 1rem 1.2rem;
-  margin-bottom: 1rem;
-  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.12);
-}
-
-.buttonBoxskin {
-  position: absolute;
-  top: 0px;
-  left: 100%;
-  margin-left: 80px;
-  
-}
-
-#skinOptionsRow {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-  background-color: #efe3fa;
-  border-radius: 20px;
-  padding: 2rem 2rem;
-  width: fit-content;
-  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.12);
-}
-
-.skinBtn {
-  
-  margin: 0;
-  padding: 1rem;
-  border: 2px solid #DFC9F2;
-  border-radius: 14px;
-  background-color: #fff8fd;
-  cursor: pointer;
-}
-
-.skinBtn img {
-  
-  width: 55px;
-  height: 55px;
-  object-fit: contain;
-  display: block;
-  background-color: white;
-  border-radius: 10px;
-}
-
-#skin {
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  top: 20px;
-  left: 20px;
-  z-index: 1;
-}
-
-/* BANGS PREVIEW CARDS */
-#bangsCarousel {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 2rem;
-  margin: 0;
-  width: auto;
-}
-
-.bangsPreviewCard {
-  background-color: #fff8fd;
-  border: 2px solid #DFC9F2;
-  border-radius: 20px;
-  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
-  padding: 0.3rem;
-  width: 115px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.bangsPreviewCard.current {
-  border-color: rgba(129, 61, 100, 0.9);
-}
-
-.bangsPreviewCard img {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  background-color: #ffffff;
-  border-radius: 10px;
-}
-
-/* SIDE BUTTONS */
-
-/* HAIR PREVIEW CARDS */
-#hairCarousel {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 2rem;
-  margin: 0;
-  width: 100%;
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.hairPreviewCard {
-  background-color: rgba(255, 240, 251, 0.855);
-  border: 2px solid #DFC9F2;
-  border-radius: 20px;
-  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
-  padding: 0.3rem;
-  width: 115px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.hairPreviewCard.current {
-  border-color: rgba(129, 61, 100, 0.9);
-}
-
-.hairPreviewCard img {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  background-color: #ffffff;
-  border-radius: 10px;
-}
-
-/* FACE PREVIEW CARDS */
-#faceCarousel {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 2rem;
-  margin: 0;
-  width: 100%;
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.facePreviewCard {
-  background-color: rgba(255, 240, 251, 0.855);
-  border: 2px solid #DFC9F2;
-  border-radius: 20px;
-  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
-  padding: 0.3rem;
-  width: 115px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.facePreviewCard.current {
-  border-color: rgba(129, 61, 100, 0.9);
-}
-
-.facePreviewCard img {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  background-color: #ffffff;
-  border-radius: 10px;
-}
-
-/* SHIRT PREVIEW CARDS */
-
-#shirtCarousel {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 2rem;
-  margin: 0;
-  width: auto;
-}
-
-.shirtPreviewCard {
-  background-color: rgba(255, 240, 251, 0.855);
-  border: 2px solid #DFC9F2;
-  border-radius: 20px;
-  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
-  padding: 0.3rem;
-  width: 115px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.shirtPreviewCard.current {
-  border-color: rgba(129, 61, 100, 0.9);
-}
-
-.shirtPreviewCard img {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  background-color: #ffffff;
-  border-radius: 10px;
-}
-
-/* BOTTOMS PREVIEW CARDS */
-#bottomsCarousel {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 2rem;
-  margin: 0;
-  width: 100%;
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.bottomsPreviewCard {
-  background-color: rgba(255, 240, 251, 0.855);
-  border: 2px solid #DFC9F2;
-  border-radius: 20px;
-  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
-  padding: 0.3rem;
-  width: 115px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.bottomsPreviewCard.current {
-  border-color: rgba(129, 61, 100, 0.9);
-}
-
-.bottomsPreviewCard img {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  background-color: #ffffff;
-  border-radius: 10px;
-}
-
-/* SHOES PREVIEW CARDS */
-#shoesCarousel {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 2rem;
-  margin: 0;
-  width: auto;
-}
-
-.shoesPreviewCard {
-  background-color: rgba(255, 240, 251, 0.855);
-  border: 2px solid #DFC9F2;
-  border-radius: 20px;
-  box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
-  padding: 0.3rem;
-  width: 115px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.shoesPreviewCard.current {
-  border-color: rgba(129, 61, 100, 0.9);
-}
-
-.shoesPreviewCard img {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  background-color: #ffffff;
-  border-radius: 10px;
-}
-
-.previewLabel {
-  font-size: 0.72rem;
-  color: #5c2b66;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.previewName {
-  font-size: 0.82rem;
-  color: #1f214d;
-}
-
-
-
-button {
-  margin-top: em;
-  margin-right: 0.4em;
-  margin-bottom: 7px;
-  color: #5c2b66;
-  background: linear-gradient(145deg, #ffe6f4, #f8d6ff);
-  box-shadow: 0px 3px 8px rgba(218, 157, 220, 0.6);
-  border-radius: 14px;
-  padding: 6px 14px;
-  border: none;
-  transition: all 0.25s ease;
-  font-weight: 500;
-}
-
-button:hover {
-  background: linear-gradient(145deg, #ffd6f0, #f3bfff);
-  box-shadow: 0px 6px 14px rgba(218, 157, 220, 0.9);
-  transform: translateY(-3px) scale(1.05);
-  color: #7a2c6a;
-}
-
 #hairback {
   position: absolute;
   height: 750px;
   width: 400px;
 }
-#girl {
-  background-image: url("./images4/1.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 2;
-}
 
-#girl,
-#shirt,
-#bottoms,
-#shoes,
-#hair,
-#face {
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  top: 20px;
-  left: 20px;
-}
+/* IMAGE CLASSES */
+.bangs1 { background-image: url("./images4/bangs1.png"); }
+.bangs2 { background-image: url("./images4/bangs2.png"); }
+.bangs3 { background-image: url("./images4/bangs3.png"); }
 
-#shirt {
-  z-index: 5;
-}
+.bottoms1 { background-image: url("./images4/bottoms1.png"); }
+.bottoms2 { background-image: url("./images4/bottoms2.png"); }
+.bottoms3 { background-image: url("./images4/bottoms3.png"); }
+.bottoms4 { background-image: url("./images4/bottoms4.png"); }
+.bottoms5 { background-image: url("./images4/bottoms5.png"); }
 
-#bottoms {
-  z-index: 4;
-}
+.shirt1 { background-image: url("./images4/shirt1.png"); }
+.shirt2 { background-image: url("./images4/shirt2.png"); }
+.shirt3 { background-image: url("./images4/shirt3.png"); }
+.shirt4 { background-image: url("./images4/shirt4.png"); }
 
-#shoes {
-  z-index: 3;
-}
+.shoes1 { background-image: url("./images4/shoes1.png"); }
+.shoes2 { background-image: url("./images4/shoes2.png"); }
+.shoes3 { background-image: url("./images4/shoes3.png"); }
 
-#hair {
-  z-index: 1;
-}
+.hair0 { background-image: url("./images4/hair0.png"); }
+.hair1 { background-image: url("./images4/hair1.png"); }
+.hair2 { background-image: url("./images4/hair2.png"); }
+.hair3 { background-image: url("./images4/hair3.png"); }
+.hair4 { background-image: url("./images4/hair4.png"); }
+.hair5 { background-image: url("./images4/hair5.png"); }
 
-#face {
-  z-index: 6;
-}
+.face1 { background-image: url("./images4/face1.png"); }
+.face2 { background-image: url("./images4/face2.png"); }
 
-#bangs {
-  z-index: 7;
-}
+.skin1 { background-image: url("./images4/skin1.png"); }
+.skin2 { background-image: url("./images4/skin2.PNG"); }
+.skin3 { background-image: url("./images4/skin3.PNG"); }
+.skin4 { background-image: url("./images4/skin4.PNG"); }
+.skin5 { background-image: url("./images4/skin5.PNG"); }
+.skin6 { background-image: url("./images4/skin6.PNG"); }
 
-#bangs {
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  top: 21px;
-  left: 19px;
-  z-index: 7;
-}
-
-/* BANGS IMAGES */
-
-.bangs1 {
-  background-image: url("./images4/bangs1.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 7;
-}
-
-.bangs2 {
-  background-image: url("./images4/bangs2.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 7;
-}
-
-.bangs3 {
-  background-image: url("./images4/bangs3.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 7;
-}
-
-/* BOTTOMS IMAGES */
-.bottoms1 {
-  background-image: url("./images4/bottoms1.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 4;
-}
-
-.bottoms2 {
-  background-image: url("./images4/bottoms2.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 4;
-}
-.bottoms3 {
-  background-image: url("./images4/bottoms3.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 4;
-}
-.bottoms4 {
-  background-image: url("./images4/bottoms4.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 4;
-}
-.bottoms5 {
-  background-image: url("./images4/bottoms5.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 4;
-}
-
-/* SHIRT IMAGES */
-.shirt1 {
-  background-image: url("./images4/shirt1.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 5;
-}
-
-.shirt2 {
-  background-image: url("./images4/shirt2.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 5;
-}
-
-.shirt3 {
-  background-image: url("./images4/shirt3.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 5;
-}
-
-.shirt4 {
-  background-image: url("./images4/shirt4.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-  z-index: 5;
-}
-
-/* SHOES IMAGES */
-.shoes1 {
-  background-image: url("./images4/shoes1.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-
-.shoes2 {
-  background-image: url("./images4/shoes2.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-
-.shoes3 {
-  background-image: url("./images4/shoes3.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-
-/* SHIRT IMAGES */
-.shirt1 {
-  background-image: url("./images4/shirt1.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-
-.shirt2 {
-  background-image: url("./images4/shirt2.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-
-.shirt3 {
-  background-image: url("./images4/shirt3.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-.shirt4 {
-  background-image: url("./images4/shirt4.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-
-/* HAIR IMAGES */
-.hair0 {
-  background-image: url("./images4/hair0.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-.hair1 {
-  background-image: url("./images4/hair1.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-.hair2 {
-  background-image: url("./images4/hair2.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-.hair3 {
-  background-image: url("./images4/hair3.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-.hair4 {
-  background-image: url("./images4/hair4.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-.hair5 {
-  background-image: url("./images4/hair5.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-
-/* FACE IMAGES */
-.face1 {
-  background-image: url("./images4/face1.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-.face2 {
-  background-image: url("./images4/face2.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-
-/* SKIN IMAGES */
-.skin1 {
-  background-image: url("./images4/skin1.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-
-.skin2 {
-  background-image: url("./images4/skin2.PNG");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-
-.skin3 {
-  background-image: url("./images4/skin3.PNG");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-
-.skin4 {
-  background-image: url("./images4/skin4.PNG");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-
-.skin5 {
-  background-image: url("./images4/skin5.PNG");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-
-.skin6 {
-  background-image: url("./images4/skin6.PNG");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 750px;
-  width: 400px;
-}
-
-.faceRow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#faceCarousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.rem;
-  width: auto;
-}
-
-
-/* PHONE CAMPATABILITY LATER? */
-@media (max-width: 650px) {
+/* TABLET */
+@media (max-width: 1400px) {
   #box {
-    width: 95%;
-    height: auto;
-    padding-bottom: 1rem;
+    grid-template-columns: minmax(360px, 460px) minmax(560px, 1fr) 115px;
   }
 
-  #shirtCarousel {
+  .listofoptions {
+    grid-template-columns: minmax(560px, 1fr) 115px;
+  }
+}
+
+/* SMALLER LAPTOPS */
+@media (max-width: 1180px) {
+  #box {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+    justify-items: center;
+  }
+
+  #backdrop {
+    width: min(500px, 82vw);
+  }
+
+    .listofoptions {
+    grid-column: 1;
+    width: min(950px, 94vw);
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+
+  .buttonBoxface,
+  .buttonBoxskin {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: center;
+    width: 100%;
+    max-width: 760px;
+  }
+
+  #faceOptionsRow,
+  #skinOptionsRow {
+    flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .buttonBoxskin .sectionTitle {
+    text-align: center;
+  }
+}
+
+/* PHONES */
+@media (max-width: 700px) {
+  body {
+    padding: 14px;
+  }
+
+  #backdrop {
+    width: min(92vw, 460px);
+    border-radius: 60px;
+  }
+
+  .buttonBoxbangs,
+  .buttonBoxhair,
+  .buttonBoxface,
+  .buttonBoxshirt,
+  .buttonBoxbottoms,
+  .buttonBoxshoes {
+    padding: 0.8rem;
+  }
+
+  #bangsCarousel,
+  #hairCarousel,
+  #shirtCarousel,
+  #bottomsCarousel,
+  #shoesCarousel {
+    gap: 0.5rem;
+  }
+
+  .bangsPreviewCard,
+  .hairPreviewCard,
+  .facePreviewCard,
+  .shirtPreviewCard,
+  .bottomsPreviewCard,
+  .shoesPreviewCard {
+    width: 74px;
+    padding: 0.25rem;
+  }
+
+  .bangsPreviewCard img,
+  .hairPreviewCard img,
+  .facePreviewCard img,
+  .shirtPreviewCard img,
+  .bottomsPreviewCard img,
+  .shoesPreviewCard img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .sideBtn {
+    padding: 6px 8px;
+    font-size: 15px;
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
   }
 }

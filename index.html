@@ -78,27 +78,6 @@
   </div>
 </div>
 
-<!--FACE-->
-  <h3 class="sectionTitle">FACE</h3>
-<div class="buttonBoxface">
-  <div class="carouselRow faceRow">
-    <button class="sideBtn faceSideBtn" onclick="prevface()">◀</button>
-
-    <div id="faceCarousel">
-      <div class="facePreviewCard current" id="faceCurrentCard">
-        <img id="faceCurrentImg" />
-      </div>
-
-      <div class="facePreviewCard" id="faceOtherCard">
-        <img id="faceOtherImg" />
-      </div>
-    </div>
-
-    <button class="sideBtn faceSideBtn" onclick="nextface()">▶</button>
-  </div>
-
-</div>
-
 <!--SHIRT-->
   <h3 class="sectionTitle">SHIRT</h3>
 <div class="buttonBoxshirt">
@@ -180,6 +159,21 @@
     </div>
 
     <button class="sideBtn shoesSideBtn" onclick="nextshoes()">▶</button>
+  </div>
+</div>
+
+<!--FACE-->
+<div class="buttonBoxface">
+  <h3 class="sectionTitle">FACE</h3>
+
+  <div id="faceOptionsRow">
+    <button class="faceBtn" onclick="setface(1)">
+      <img src="./images4/face1.png" alt="Face 1" />
+    </button>
+
+    <button class="faceBtn" onclick="setface(2)">
+      <img src="./images4/face2.png" alt="Face 2" />
+    </button>
   </div>
 </div>
 

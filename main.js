@@ -28,7 +28,8 @@ updateShoesCarousel();
 updateBangsCarousel();
 updateHairCarousel();
 updateShirtCarousel();
-updateFaceCarousel();
+updateFaceButtons();
+updateSkinButtons();
 
 function setLayerClass(elementId, classPrefix, value) {
   const element = document.querySelector(`#${elementId}`);
@@ -192,30 +193,22 @@ function prevshirt() {
 
 /* ---------- FACE ---------- */
 
-function getOtherFace(current) {
-  return current === 1 ? 2 : 1;
+function setface(number) {
+  state.face = number;
+  setLayerClass("face", "face", number);
+  updateFaceButtons();
 }
 
-function setFacePreview(imgId, index) {
-  const img = document.getElementById(imgId);
-  if (img) img.src = `./images4/face${index}.png`;
-}
+function updateFaceButtons() {
+  const buttons = document.querySelectorAll(".faceBtn");
 
-function updateFaceCarousel() {
-  setFacePreview("faceCurrentImg", state.face);
-  setFacePreview("faceOtherImg", getOtherFace(state.face));
-}
-
-function nextface() {
-  state.face = nextValue(state.face, FACE_COUNT);
-  setLayerClass("face", "face", state.face);
-  updateFaceCarousel();
-}
-
-function prevface() {
-  state.face = state.face > 1 ? state.face - 1 : FACE_COUNT;
-  setLayerClass("face", "face", state.face);
-  updateFaceCarousel();
+  buttons.forEach((button, index) => {
+    if (index + 1 === state.face) {
+      button.classList.add("selected");
+    } else {
+      button.classList.remove("selected");
+    }
+  });
 }
 
 /* ---------- SKIN ---------- */
@@ -223,4 +216,17 @@ function prevface() {
 function setskin(number) {
   state.skin = number;
   setLayerClass("skin", "skin", number);
+  updateSkinButtons();
+}
+
+function updateSkinButtons() {
+  const buttons = document.querySelectorAll(".skinBtn");
+
+  buttons.forEach((button, index) => {
+    if (index + 1 === state.skin) {
+      button.classList.add("selected");
+    } else {
+      button.classList.remove("selected");
+    }
+  });
 }
