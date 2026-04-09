@@ -31,6 +31,13 @@ updateShirtCarousel();
 updateFaceButtons();
 updateSkinButtons();
 
+const playlist = [
+  "./images4/BeepBox-Song.mp3", 
+  "./images4/BeepBox-Song1.mp3" 
+];
+
+let currentTrack = 0;
+
 function setLayerClass(elementId, classPrefix, value) {
   const element = document.querySelector(`#${elementId}`);
   if (!element) return;
@@ -229,4 +236,29 @@ function updateSkinButtons() {
       button.classList.remove("selected");
     }
   });
+}
+
+/* ---------- MUSIC ---------- */
+
+let isPlaying = false;
+
+function toggleMusic() {
+  const music = document.getElementById("bgMusic");
+  const icon = document.getElementById("recordIcon");
+
+  if (!music) return;
+
+  if (!music.src) {
+    music.src = playlist[currentTrack];
+  }
+
+  if (isPlaying) {
+    music.pause(); // pauses EXACT spot
+    icon.src = "./images4/recordmute.png";
+    isPlaying = false;
+  } else {
+    music.play(); // resumes where it left off
+    icon.src = "./images4/recordspinning.gif";
+    isPlaying = true;
+  }
 }
