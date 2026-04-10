@@ -10,7 +10,7 @@ let state = {
 
 const BOTTOMS_COUNT = 5;
 const SHOES_COUNT = 3;
-const BANGS_COUNT = 3;
+const BANGS_COUNT = 8;
 const HAIR_COUNT = 5;
 const SHIRT_COUNT = 4;
 const FACE_COUNT = 2;
@@ -120,9 +120,11 @@ function setBangsPreview(imgId, index) {
 }
 
 function updateBangsCarousel() {
+  setBangsPreview("bangsFarPrevImg", getBangsIndex(state.bangs, -2));
   setBangsPreview("bangsPrevImg", getBangsIndex(state.bangs, -1));
   setBangsPreview("bangsCurrentImg", state.bangs);
   setBangsPreview("bangsNextImg", getBangsIndex(state.bangs, 1));
+  setBangsPreview("bangsFarNextImg", getBangsIndex(state.bangs, 2));
 }
 
 function nextbangs() {
