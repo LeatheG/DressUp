@@ -11,13 +11,23 @@ let state = {
 const BOTTOMS_COUNT = 5;
 const SHOES_COUNT = 3;
 const BANGS_COUNT = 8;
-const HAIR_COUNT = 5;
+const HAIR_COUNT = 8;
 const SHIRT_COUNT = 4;
 const FACE_COUNT = 2;
+const HAIR_IMAGE_FILES = [
+  "hair0.png",
+  "hair1.png",
+  "hair2.PNG",
+  "hair3.png",
+  "hair4.png",
+  "hair5.PNG",
+  "hair6.PNG",
+  "hair7.PNG",
+];
 
 setLayerClass("bottoms", "bottoms", state.bottoms);
 setLayerClass("shoes", "shoes", state.shoes);
-setLayerClass("hair", "hair", state.hair);
+setHairLayerClass();
 setLayerClass("shirt", "shirt", state.shirt);
 setLayerClass("face", "face", state.face);
 setLayerClass("bangs", "bangs", state.bangs);
@@ -42,6 +52,12 @@ function setLayerClass(elementId, classPrefix, value) {
   const element = document.querySelector(`#${elementId}`);
   if (!element) return;
   element.setAttribute("class", `${classPrefix}${value}`);
+}
+
+function setHairLayerClass() {
+  const hairElement = document.querySelector("#hair");
+  if (!hairElement) return;
+  hairElement.setAttribute("class", `hair${state.hair - 1}`);
 }
 
 function nextValue(current, count) {
@@ -147,7 +163,7 @@ function getHairIndex(current, offset) {
 
 function setHairPreview(imgId, index) {
   const img = document.getElementById(imgId);
-  if (img) img.src = `./images4/hair${index - 1}.png`;
+  if (img) img.src = `./images4/${HAIR_IMAGE_FILES[index - 1]}`;
 }
 
 function updateHairCarousel() {
@@ -160,13 +176,13 @@ function updateHairCarousel() {
 
 function nexthair() {
   state.hair = nextValue(state.hair, HAIR_COUNT);
-  document.querySelector("#hair").setAttribute("class", `hair${state.hair - 1}`);
+  setHairLayerClass();
   updateHairCarousel();
 }
 
 function prevhair() {
   state.hair = state.hair > 1 ? state.hair - 1 : HAIR_COUNT;
-  document.querySelector("#hair").setAttribute("class", `hair${state.hair - 1}`);
+  setHairLayerClass();
   updateHairCarousel();
 }
 

@@ -385,10 +385,12 @@ button:hover {
 
 .hair0 { background-image: url("./images4/hair0.png"); }
 .hair1 { background-image: url("./images4/hair1.png"); }
-.hair2 { background-image: url("./images4/hair2.png"); }
+.hair2 { background-image: url("./images4/hair2.PNG"); }
 .hair3 { background-image: url("./images4/hair3.png"); }
 .hair4 { background-image: url("./images4/hair4.png"); }
-.hair5 { background-image: url("./images4/hair5.png"); }
+.hair5 { background-image: url("./images4/hair5.PNG"); }
+.hair6 { background-image: url("./images4/hair6.PNG"); }
+.hair7 { background-image: url("./images4/hair7.PNG"); }
 
 .face1 { background-image: url("./images4/face1.png"); }
 .face2 { background-image: url("./images4/face2.png"); }
