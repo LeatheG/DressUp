@@ -12,8 +12,8 @@ const BOTTOMS_COUNT = 5;
 const SHOES_COUNT = 3;
 const BANGS_COUNT = 8;
 const HAIR_COUNT = 8;
-const SHIRT_COUNT = 4;
-const FACE_COUNT = 2;
+const SHIRT_COUNT = 8;
+const FACE_COUNT = 6;
 const HAIR_IMAGE_FILES = [
   "hair0.png",
   "hair1.png",
@@ -23,6 +23,16 @@ const HAIR_IMAGE_FILES = [
   "hair5.PNG",
   "hair6.PNG",
   "hair7.PNG",
+];
+const SHIRT_IMAGE_FILES = [
+  "shirt1.PNG",
+  "shirt2.PNG",
+  "shirt3.PNG",
+  "shirt4.PNG",
+  "shirt5.PNG",
+  "shirt6.PNG",
+  "shirt7.PNG",
+  "shirt8.PNG",
 ];
 
 setLayerClass("bottoms", "bottoms", state.bottoms);
@@ -194,14 +204,15 @@ function getShirtIndex(current, offset) {
 
 function setShirtPreview(imgId, index) {
   const img = document.getElementById(imgId);
-  if (img) img.src = `./images4/shirt${index}.png`;
+  if (img) img.src = `./images4/${SHIRT_IMAGE_FILES[index - 1]}`;
 }
 
 function updateShirtCarousel() {
+  setShirtPreview("shirtFarPrevImg", getShirtIndex(state.shirt, -2));
   setShirtPreview("shirtPrevImg", getShirtIndex(state.shirt, -1));
   setShirtPreview("shirtCurrentImg", state.shirt);
   setShirtPreview("shirtNextImg", getShirtIndex(state.shirt, 1));
-  setShirtPreview("shirtNext2Img", getShirtIndex(state.shirt, 2));
+  setShirtPreview("shirtFarNextImg", getShirtIndex(state.shirt, 2));
 }
 
 function nextshirt() {
@@ -219,6 +230,7 @@ function prevshirt() {
 /* ---------- FACE ---------- */
 
 function setface(number) {
+  if (number < 1 || number > FACE_COUNT) return;
   state.face = number;
   setLayerClass("face", "face", number);
   updateFaceButtons();
