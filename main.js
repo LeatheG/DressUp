@@ -8,8 +8,16 @@ let state = {
   skin: 1,
 };
 
-const BOTTOMS_COUNT = 5;
-const SHOES_COUNT = 3;
+const BOTTOMS_COUNT = 6;
+const SHOES_COUNT = 6;
+const SHOES_IMAGE_FILES = [
+  "shoes1.png",
+  "shoes2.PNG",
+  "shoes3.png",
+  "shoes4.PNG",
+  "shoes5.PNG",
+  "shoes6.PNG",
+];
 const BANGS_COUNT = 8;
 const HAIR_COUNT = 8;
 const SHIRT_COUNT = 8;
@@ -113,13 +121,15 @@ function getShoesIndex(current, offset) {
 
 function setShoesPreview(imgId, index) {
   const img = document.getElementById(imgId);
-  if (img) img.src = `./images4/shoes${index}.png`;
+  if (img) img.src = `./images4/${SHOES_IMAGE_FILES[index - 1]}`;
 }
 
 function updateShoesCarousel() {
+  setShoesPreview("shoesFarPrevImg", getShoesIndex(state.shoes, -2));
   setShoesPreview("shoesPrevImg", getShoesIndex(state.shoes, -1));
   setShoesPreview("shoesCurrentImg", state.shoes);
   setShoesPreview("shoesNextImg", getShoesIndex(state.shoes, 1));
+  setShoesPreview("shoesFarNextImg", getShoesIndex(state.shoes, 2));
 }
 
 function nextshoes() {

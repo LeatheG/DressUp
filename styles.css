@@ -373,6 +373,7 @@ button:hover {
 .bottoms3 { background-image: url("./images4/bottoms3.png"); }
 .bottoms4 { background-image: url("./images4/bottoms4.png"); }
 .bottoms5 { background-image: url("./images4/bottoms5.png"); }
+.bottoms6 { background-image: url("./images4/bottoms6.PNG"); }
 
 .shirt1 { background-image: url("./images4/shirt1.PNG"); }
 .shirt2 { background-image: url("./images4/shirt2.PNG"); }
@@ -384,8 +385,11 @@ button:hover {
 .shirt8 { background-image: url("./images4/shirt8.PNG"); }
 
 .shoes1 { background-image: url("./images4/shoes1.png"); }
-.shoes2 { background-image: url("./images4/shoes2.png"); }
+.shoes2 { background-image: url("./images4/shoes2.PNG"); }
 .shoes3 { background-image: url("./images4/shoes3.png"); }
+.shoes4 { background-image: url("./images4/shoes4.PNG"); }
+.shoes5 { background-image: url("./images4/shoes5.PNG"); }
+.shoes6 { background-image: url("./images4/shoes6.PNG"); }
 
 .hair0 { background-image: url("./images4/hair0.png"); }
 .hair1 { background-image: url("./images4/hair1.png"); }
