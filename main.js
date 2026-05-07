@@ -90,7 +90,7 @@ function getBottomsIndex(current, offset) {
 
 function setBottomsPreview(imgId, index) {
   const img = document.getElementById(imgId);
-  if (img) img.src = `./images4/bottoms${index}.png`;
+  if (img) img.src = `./images4/bottoms${index}.PNG`;
 }
 
 function updateBottomsCarousel() {
