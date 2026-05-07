@@ -327,7 +327,7 @@ button {
 button,
 #musicPlayer,
 #musicPlayer img {
-  cursor: url("./images4/pointer.png") 3 2, pointer;
+  cursor: url("./images4/pointer.png") 16 16, pointer;
 }
 
 button:hover {
