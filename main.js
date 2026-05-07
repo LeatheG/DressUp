@@ -61,7 +61,8 @@ updateSkinButtons();
 
 const playlist = [
   "./images4/BeepBox-Song.mp3", 
-  "./images4/BeepBox-Song1.mp3" 
+  "./images4/BeepBox-Song(1).mp3" ,
+  "./images4/BeepBox-Song1.mp3" ,
 ];
 
 let currentTrack = 0;
@@ -285,13 +286,22 @@ function updateSkinButtons() {
 
 let isPlaying = false;
 
+const bgMusic = document.getElementById("bgMusic");
+if (bgMusic) {
+  bgMusic.addEventListener("ended", () => {
+    currentTrack = (currentTrack + 1) % playlist.length;
+    bgMusic.src = playlist[currentTrack];
+    bgMusic.play();
+  });
+}
+
 function toggleMusic() {
   const music = document.getElementById("bgMusic");
   const icon = document.getElementById("recordIcon");
 
   if (!music) return;
 
-  if (!music.src) {
+  if (!music.src || music.src === window.location.href) {
     music.src = playlist[currentTrack];
   }
 
