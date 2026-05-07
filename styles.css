@@ -14,6 +14,7 @@ body {
   min-height: 100vh;
   padding: 24px;
   box-sizing: border-box;
+  cursor: url("./images4/mouse.png") 16 16, auto;
 }
 
 *,
@@ -204,7 +205,6 @@ body {
   border: 2px solid #DFC9F2;
   border-radius: 14px;
   background-color: #fff8fd;
-  cursor: pointer;
   box-shadow: 0px 3px 8px rgba(218, 157, 220, 0.6);
 }
 
@@ -295,7 +295,6 @@ body {
   border: 2px solid #DFC9F2;
   border-radius: 14px;
   background-color: #fff8fd;
-  cursor: pointer;
 }
 
 .skinBtn.selected {
@@ -323,6 +322,12 @@ button {
   border: none;
   transition: all 0.25s ease;
   font-weight: 500;
+}
+
+button,
+#musicPlayer,
+#musicPlayer img {
+  cursor: url("./images4/pointer.png") 3 2, pointer;
 }
 
 button:hover {
@@ -368,24 +373,24 @@ button:hover {
 .bangs7 { background-image: url("./images4/bangs7.png"); }
 .bangs8 { background-image: url("./images4/bangs8.png"); }
 
-.bottoms1 { background-image: url("./images4/bottoms1.PNG"); }
-.bottoms2 { background-image: url("./images4/bottoms2.PNG"); }
-.bottoms3 { background-image: url("./images4/bottoms3.PNG"); }
-.bottoms4 { background-image: url("./images4/bottoms4.PNG"); }
-.bottoms5 { background-image: url("./images4/bottoms5.PNG"); }
+.bottoms1 { background-image: url("./images4/bottoms1.png"); }
+.bottoms2 { background-image: url("./images4/bottoms2.png"); }
+.bottoms3 { background-image: url("./images4/bottoms3.png"); }
+.bottoms4 { background-image: url("./images4/bottoms4.png"); }
+.bottoms5 { background-image: url("./images4/bottoms5.png"); }
 .bottoms6 { background-image: url("./images4/bottoms6.PNG"); }
 
-.shirt1 { background-image: url("./images4/shirt1.PNG"); }
-.shirt2 { background-image: url("./images4/shirt2.PNG"); }
-.shirt3 { background-image: url("./images4/shirt3.PNG"); }
-.shirt4 { background-image: url("./images4/shirt4.PNG"); }
+.shirt1 { background-image: url("./images4/shirt1.png"); }
+.shirt2 { background-image: url("./images4/shirt2.png"); }
+.shirt3 { background-image: url("./images4/shirt3.png"); }
+.shirt4 { background-image: url("./images4/shirt4.png"); }
 .shirt5 { background-image: url("./images4/shirt5.PNG"); }
 .shirt6 { background-image: url("./images4/shirt6.PNG"); }
 .shirt7 { background-image: url("./images4/shirt7.PNG"); }
 .shirt8 { background-image: url("./images4/shirt8.PNG"); }
 
 .shoes1 { background-image: url("./images4/shoes1.png"); }
-.shoes2 { background-image: url("./images4/shoes2.PNG"); }
+.shoes2 { background-image: url("./images4/shoes2.png"); }
 .shoes3 { background-image: url("./images4/shoes3.png"); }
 .shoes4 { background-image: url("./images4/shoes4.PNG"); }
 .shoes5 { background-image: url("./images4/shoes5.PNG"); }
@@ -393,7 +398,7 @@ button:hover {
 
 .hair0 { background-image: url("./images4/hair0.png"); }
 .hair1 { background-image: url("./images4/hair1.png"); }
-.hair2 { background-image: url("./images4/hair2.PNG"); }
+.hair2 { background-image: url("./images4/hair2.png"); }
 .hair3 { background-image: url("./images4/hair3.png"); }
 .hair4 { background-image: url("./images4/hair4.png"); }
 .hair5 { background-image: url("./images4/hair5.PNG"); }
@@ -407,7 +412,7 @@ button:hover {
 .face5 { background-image: url("./images4/face5.PNG"); }
 .face6 { background-image: url("./images4/face6.PNG"); }
 
-.skin1 { background-image: url("./images4/skin1.PNG"); }
+.skin1 { background-image: url("./images4/skin1.png"); }
 .skin2 { background-image: url("./images4/skin2.PNG"); }
 .skin3 { background-image: url("./images4/skin3.PNG"); }
 .skin4 { background-image: url("./images4/skin4.PNG"); }
@@ -419,7 +424,6 @@ button:hover {
   bottom: 25px;
   left: 19px; 
   z-index: 999;
-  cursor: pointer;
 }
 
 #musicPlayer img {

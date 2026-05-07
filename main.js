@@ -12,7 +12,7 @@ const BOTTOMS_COUNT = 6;
 const SHOES_COUNT = 6;
 const SHOES_IMAGE_FILES = [
   "shoes1.png",
-  "shoes2.PNG",
+  "shoes2.png",
   "shoes3.png",
   "shoes4.PNG",
   "shoes5.PNG",
@@ -25,7 +25,7 @@ const FACE_COUNT = 6;
 const HAIR_IMAGE_FILES = [
   "hair0.png",
   "hair1.png",
-  "hair2.PNG",
+  "hair2.png",
   "hair3.png",
   "hair4.png",
   "hair5.PNG",
@@ -33,10 +33,10 @@ const HAIR_IMAGE_FILES = [
   "hair7.PNG",
 ];
 const SHIRT_IMAGE_FILES = [
-  "shirt1.PNG",
-  "shirt2.PNG",
-  "shirt3.PNG",
-  "shirt4.PNG",
+  "shirt1.png",
+  "shirt2.png",
+  "shirt3.png",
+  "shirt4.png",
   "shirt5.PNG",
   "shirt6.PNG",
   "shirt7.PNG",
@@ -90,7 +90,10 @@ function getBottomsIndex(current, offset) {
 
 function setBottomsPreview(imgId, index) {
   const img = document.getElementById(imgId);
-  if (img) img.src = `./images4/bottoms${index}.PNG`;
+  if (img) {
+    const extension = index === 6 ? "PNG" : "png";
+    img.src = `./images4/bottoms${index}.${extension}`;
+  }
 }
 
 function updateBottomsCarousel() {
