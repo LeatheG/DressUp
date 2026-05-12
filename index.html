@@ -8,6 +8,7 @@
     <title></title>
   </head>
   <body>
+    <div id="sceneBackground"></div>
     <h1 id="heading"></h1>
     <div id="box">
       <div id="backdrop">
@@ -22,227 +23,83 @@
       </div>
 <div class="listofoptions">
 
-<!--BANGS-->
-  <h3 class="sectionTitle">BANGS</h3>
-<div class="buttonBoxbangs">
-  <div class="carouselRow bangsRow">
-    <button class="sideBtn bangsSideBtn" onclick="prevbangs()">◀</button>
-
-    <div id="bangsCarousel">
-      <div class="bangsPreviewCard" id="bangsFarPrevCard">
-        <img id="bangsFarPrevImg" />
-      </div>
-
-      <div class="bangsPreviewCard" id="bangsPrevCard">
-        <img id="bangsPrevImg" />
-      </div>
-
-      <div class="bangsPreviewCard current" id="bangsCurrentCard">
-        <img id="bangsCurrentImg" />
-      </div>
-
-      <div class="bangsPreviewCard" id="bangsNextCard">
-        <img id="bangsNextImg" />
-      </div>
-
-      <div class="bangsPreviewCard" id="bangsFarNextCard">
-        <img id="bangsFarNextImg" />
-      </div>
-    </div>
-
-    <button class="sideBtn bangsSideBtn" onclick="nextbangs()">▶</button>
+<section class="optionCard">
+  <h3 class="sectionTitle">⭐ BANGS</h3>
+  <div class="optionGrid five">
+    <button class="itemBtn bangsBtn" onclick="setbangs(1)"><img src="./images4/bangs1.png"></button>
+    <button class="itemBtn bangsBtn" onclick="setbangs(2)"><img src="./images4/bangs2.png"></button>
+    <button class="itemBtn bangsBtn" onclick="setbangs(3)"><img src="./images4/bangs3.png"></button>
+    <button class="itemBtn bangsBtn" onclick="setbangs(4)"><img src="./images4/bangs4.png"></button>
+    <button class="itemBtn bangsBtn" onclick="setbangs(5)"><img src="./images4/bangs5.png"></button>
   </div>
-</div>
+</section>
 
-<!--HAIR-->
-  <h3 class="sectionTitle">HAIR</h3>
-<div class="buttonBoxhair">
-  <div class="carouselRow hairRow">
-    <button class="sideBtn hairSideBtn" onclick="prevhair()">◀</button>
-
-    <div id="hairCarousel">
-      <div class="hairPreviewCard" id="hairFarPrevCard">
-        <img id="hairFarPrevImg" />
-      </div>
-
-      <div class="hairPreviewCard" id="hairPrevCard">
-        <img id="hairPrevImg" />
-      </div>
-
-      <div class="hairPreviewCard current" id="hairCurrentCard">
-        <img id="hairCurrentImg" />
-      </div>
-
-      <div class="hairPreviewCard" id="hairNextCard">
-        <img id="hairNextImg" />
-      </div>
-
-      <div class="hairPreviewCard" id="hairFarNextCard">
-        <img id="hairFarNextImg" />
-      </div>
-    </div>
-
-    <button class="sideBtn hairSideBtn" onclick="nexthair()">▶</button>
+<section class="optionCard">
+  <h3 class="sectionTitle">⭐ HAIR</h3>
+  <div class="optionGrid five">
+    <button class="itemBtn hairBtn" onclick="sethair(1)"><img src="./images4/hair0.png"></button>
+    <button class="itemBtn hairBtn" onclick="sethair(2)"><img src="./images4/hair1.png"></button>
+    <button class="itemBtn hairBtn" onclick="sethair(3)"><img src="./images4/hair2.PNG"></button>
+    <button class="itemBtn hairBtn" onclick="sethair(4)"><img src="./images4/hair3.png"></button>
+    <button class="itemBtn hairBtn" onclick="sethair(5)"><img src="./images4/hair4.png"></button>
   </div>
-</div>
+</section>
 
-<!--SHIRT-->
-  <h3 class="sectionTitle">SHIRT</h3>
-<div class="buttonBoxshirt">
-  <div class="carouselRow shirtRow">
-    <button class="sideBtn shirtSideBtn" onclick="prevshirt()">◀</button>
-
-    <div id="shirtCarousel">
-      <div class="shirtPreviewCard" id="shirtFarPrevCard">
-        <img id="shirtFarPrevImg" />
-      </div>
-
-      <div class="shirtPreviewCard" id="shirtPrevCard">
-        <img id="shirtPrevImg" />
-      </div>
-
-      <div class="shirtPreviewCard current" id="shirtCurrentCard">
-        <img id="shirtCurrentImg" />
-      </div>
-
-      <div class="shirtPreviewCard" id="shirtNextCard">
-        <img id="shirtNextImg" />
-      </div>
-
-      <div class="shirtPreviewCard" id="shirtFarNextCard">
-        <img id="shirtFarNextImg" />
-      </div>
-    </div>
-
-    <button class="sideBtn shirtSideBtn" onclick="nextshirt()">▶</button>
+<section class="optionCard">
+  <h3 class="sectionTitle">⭐ SHIRT</h3>
+  <div class="optionGrid five">
+    <button class="itemBtn shirtBtn" onclick="setshirt(1)"><img src="./images4/shirt1.PNG"></button>
+    <button class="itemBtn shirtBtn" onclick="setshirt(2)"><img src="./images4/shirt2.PNG"></button>
+    <button class="itemBtn shirtBtn" onclick="setshirt(3)"><img src="./images4/shirt3.PNG"></button>
+    <button class="itemBtn shirtBtn" onclick="setshirt(4)"><img src="./images4/shirt4.PNG"></button>
+    <button class="itemBtn shirtBtn" onclick="setshirt(5)"><img src="./images4/shirt5.PNG"></button>
   </div>
-</div>
+</section>
 
-<!--BOTTOMS-->
-  <h3 class="sectionTitle">BOTTOMS</h3>
-<div class="buttonBoxbottoms">
-  <div class="carouselRow bottomsRow">
-    <button class="sideBtn bottomsSideBtn" onclick="prevbottoms()">◀</button>
-
-    <div id="bottomsCarousel">
-      <div class="bottomsPreviewCard" id="bottomsFarPrevCard">
-        <img id="bottomsFarPrevImg" />
-      </div>
-
-      <div class="bottomsPreviewCard" id="bottomsPrevCard">
-        <img id="bottomsPrevImg" />
-      </div>
-
-      <div class="bottomsPreviewCard current" id="bottomsCurrentCard">
-        <img id="bottomsCurrentImg" />
-      </div>
-
-      <div class="bottomsPreviewCard" id="bottomsNextCard">
-        <img id="bottomsNextImg" />
-      </div>
-
-      <div class="bottomsPreviewCard" id="bottomsFarNextCard">
-        <img id="bottomsFarNextImg" />
-      </div>
-    </div>
-
-    <button class="sideBtn bottomsSideBtn" onclick="nextbottoms()">▶</button>
+<section class="optionCard">
+  <h3 class="sectionTitle">⭐ BOTTOMS</h3>
+  <div class="optionGrid five">
+    <button class="itemBtn bottomsBtn" onclick="setbottoms(1)"><img src="./images4/bottoms1.png"></button>
+    <button class="itemBtn bottomsBtn" onclick="setbottoms(2)"><img src="./images4/bottoms2.png"></button>
+    <button class="itemBtn bottomsBtn" onclick="setbottoms(3)"><img src="./images4/bottoms3.png"></button>
+    <button class="itemBtn bottomsBtn" onclick="setbottoms(4)"><img src="./images4/bottoms4.png"></button>
+    <button class="itemBtn bottomsBtn" onclick="setbottoms(5)"><img src="./images4/bottoms5.png"></button>
   </div>
-</div>
+</section>
 
-<!--SHOES-->
-  <h3 class="sectionTitle">SHOES</h3>
-<div class="buttonBoxshoes">
-  <div class="carouselRow shoesRow">
-    <button class="sideBtn shoesSideBtn" onclick="prevshoes()">◀</button>
-
-    <div id="shoesCarousel">
-      <div class="shoesPreviewCard" id="shoesFarPrevCard">
-        <img id="shoesFarPrevImg" />
-      </div>
-
-      <div class="shoesPreviewCard" id="shoesPrevCard">
-        <img id="shoesPrevImg" />
-      </div>
-
-      <div class="shoesPreviewCard current" id="shoesCurrentCard">
-        <img id="shoesCurrentImg" />
-      </div>
-
-      <div class="shoesPreviewCard" id="shoesNextCard">
-        <img id="shoesNextImg" />
-      </div>
-
-      <div class="shoesPreviewCard" id="shoesFarNextCard">
-        <img id="shoesFarNextImg" />
-      </div>
-    </div>
-
-    <button class="sideBtn shoesSideBtn" onclick="nextshoes()">▶</button>
+<section class="optionCard">
+  <h3 class="sectionTitle">⭐ SHOES</h3>
+  <div class="optionGrid five">
+    <button class="itemBtn shoesBtn" onclick="setshoes(1)"><img src="./images4/shoes1.png"></button>
+    <button class="itemBtn shoesBtn" onclick="setshoes(2)"><img src="./images4/shoes2.PNG"></button>
+    <button class="itemBtn shoesBtn" onclick="setshoes(3)"><img src="./images4/shoes3.png"></button>
+    <button class="itemBtn shoesBtn" onclick="setshoes(4)"><img src="./images4/shoes4.PNG"></button>
+    <button class="itemBtn shoesBtn" onclick="setshoes(5)"><img src="./images4/shoes5.PNG"></button>
   </div>
-</div>
+</section>
 
-<!--FACE-->
-<div class="buttonBoxface">
-  <h3 class="sectionTitle">FACE</h3>
-
-  <div id="faceOptionsRow">
-    <button class="faceBtn" onclick="setface(1)">
-      <img src="./images4/face1.png" alt="Face 1" />
-    </button>
-
-    <button class="faceBtn" onclick="setface(2)">
-      <img src="./images4/face2.png" alt="Face 2" />
-    </button>
-
-    <button class="faceBtn" onclick="setface(3)">
-      <img src="./images4/face3.png" alt="Face 3" />
-    </button>
-
-    <button class="faceBtn" onclick="setface(4)">
-      <img src="./images4/face4.PNG" alt="Face 4" />
-    </button>
-
-    <button class="faceBtn" onclick="setface(5)">
-      <img src="./images4/face5.PNG" alt="Face 5" />
-    </button>
-
-    <button class="faceBtn" onclick="setface(6)">
-      <img src="./images4/face6.PNG" alt="Face 6" />
-    </button>
+<section class="optionCard">
+  <h3 class="sectionTitle">⭐ FACE</h3>
+  <div class="optionGrid five">
+    <button class="itemBtn faceBtn" onclick="setface(1)"><img src="./images4/face1.png"></button>
+    <button class="itemBtn faceBtn" onclick="setface(2)"><img src="./images4/face2.png"></button>
+    <button class="itemBtn faceBtn" onclick="setface(3)"><img src="./images4/face3.png"></button>
+    <button class="itemBtn faceBtn" onclick="setface(4)"><img src="./images4/face4.PNG"></button>
+    <button class="itemBtn faceBtn" onclick="setface(5)"><img src="./images4/face5.PNG"></button>
   </div>
-</div>
+</section>
 
-<!--SKIN COLOR-->
-<div class="buttonBoxskin">
-  <h3 class="sectionTitle">SKIN</h3>
-
-  <div id="skinOptionsRow">
-    <button class="skinBtn" onclick="setskin(1)">
-      <img src="./images4/skin1.png" alt="Skin 1" />
-    </button>
-
-    <button class="skinBtn" onclick="setskin(2)">
-      <img src="./images4/skin2.PNG" alt="Skin 2" />
-    </button>
-
-    <button class="skinBtn" onclick="setskin(3)">
-      <img src="./images4/skin3.PNG" alt="Skin 3" />
-    </button>
-
-    <button class="skinBtn" onclick="setskin(4)">
-      <img src="./images4/skin4.PNG" alt="Skin 4" />
-    </button>
-
-    <button class="skinBtn" onclick="setskin(5)">
-      <img src="./images4/skin5.PNG" alt="Skin 5" />
-    </button>
-
-    <button class="skinBtn" onclick="setskin(6)">
-      <img src="./images4/skin6.PNG" alt="Skin 6" />
-    </button>
+<section class="optionCard skinCard">
+  <h3 class="sectionTitle">⭐ SKIN</h3>
+  <div class="optionGrid six">
+    <button class="itemBtn skinBtn" onclick="setskin(1)"><img src="./images4/skin1.png"></button>
+    <button class="itemBtn skinBtn" onclick="setskin(2)"><img src="./images4/skin2.PNG"></button>
+    <button class="itemBtn skinBtn" onclick="setskin(3)"><img src="./images4/skin3.PNG"></button>
+    <button class="itemBtn skinBtn" onclick="setskin(4)"><img src="./images4/skin4.PNG"></button>
+    <button class="itemBtn skinBtn" onclick="setskin(5)"><img src="./images4/skin5.PNG"></button>
+    <button class="itemBtn skinBtn" onclick="setskin(6)"><img src="./images4/skin6.PNG"></button>
   </div>
-</div>
+</section>
      
 <!-- MUSIC BUTTON -->
 <div id="musicPlayer" onclick="toggleMusic()">

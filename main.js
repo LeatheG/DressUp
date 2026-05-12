@@ -302,3 +302,71 @@ function toggleMusic() {
     isPlaying = true;
   }
 }
+
+/* ---------- LOCK CHARACTER TO BACKGROUND RUG ---------- */
+
+function updateCharacterPosition() {
+  const imgW = 1792;
+  const imgH = 1024;
+
+  const rugX = 353;
+  const rugY = 900;
+
+  const isPhone = window.innerWidth <= 700;
+
+  const screenW = isPhone ? window.innerHeight : window.innerWidth;
+  const screenH = isPhone ? window.innerWidth : window.innerHeight;
+
+  const scale = Math.max(screenW / imgW, screenH / imgH);
+
+  const renderedH = imgH * scale;
+  const offsetY = (screenH - renderedH) / 2;
+
+  const rugScreenX = rugX * scale;
+  const rugScreenY = offsetY + rugY * scale;
+
+  document.documentElement.style.setProperty("--sceneScale", scale);
+  document.documentElement.style.setProperty("--rugScreenX", `${rugScreenX}px`);
+  document.documentElement.style.setProperty("--rugScreenY", `${rugScreenY}px`);
+}
+
+window.addEventListener("load", updateCharacterPosition);
+window.addEventListener("resize", updateCharacterPosition);
+window.addEventListener("orientationchange", updateCharacterPosition);
+
+
+function setbangs(number) {
+  state.bangs = number;
+  setLayerClass("bangs", "bangs", number);
+  updateSelectedButtons(".bangsBtn", number);
+}
+
+function sethair(number) {
+  state.hair = number;
+  setHairLayerClass();
+  updateSelectedButtons(".hairBtn", number);
+}
+
+function setshirt(number) {
+  state.shirt = number;
+  setLayerClass("shirt", "shirt", number);
+  updateSelectedButtons(".shirtBtn", number);
+}
+
+function setbottoms(number) {
+  state.bottoms = number;
+  setLayerClass("bottoms", "bottoms", number);
+  updateSelectedButtons(".bottomsBtn", number);
+}
+
+function setshoes(number) {
+  state.shoes = number;
+  setLayerClass("shoes", "shoes", number);
+  updateSelectedButtons(".shoesBtn", number);
+}
+
+function updateSelectedButtons(selector, selectedNumber) {
+  document.querySelectorAll(selector).forEach((button, index) => {
+    button.classList.toggle("selected", index + 1 === selectedNumber);
+  });
+}
