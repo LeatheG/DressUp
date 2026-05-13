@@ -319,11 +319,11 @@ function toggleMusic() {
 /* ---------- LOCK CHARACTER TO BACKGROUND RUG ---------- */
 
 function updateCharacterPosition() {
-  const imgW = 1792;
-  const imgH = 1024;
+  const imgW = 1914;
+const imgH = 913;
 
-  const rugX = 340;
-  const rugY = 915;
+  const rugX = 310;
+  const rugY = 890;
 
   const isPhone = window.innerWidth <= 700;
 
