@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 body {
   background-image: url("./images4/GirlyBackground.png");
   background-size: cover;
@@ -35,22 +37,65 @@ body {
   margin: 0 0 10px 0;
 }
 
+#gameTitle {
+  position: fixed;
+
+  top: 18px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  margin: 0;
+
+  z-index: 1000;
+
+  font-size: clamp(1.9rem, 3vw, 3.6rem);
+
+  font-family: "Pacifico", cursive;
+
+  font-weight: normal;
+
+  letter-spacing: 1px;
+
+  color: white;
+
+  -webkit-text-stroke: .5px #ff149d;
+
+  padding: 6px 12px;
+
+  /* DARK PINK INNER OUTLINE */
+  text-shadow:
+  /* tight pink edge */
+  0 0 2px #ff5fc0,
+  0 0 4px #ff5fc0,
+  0 0 8px #ff5fc0,
+
+  /* bright neon glow */
+  0 0 14px #ff4db8,
+  0 0 24px #ff4db8,
+  0 0 40px #ff2fae,
+
+  /* huge outer aura */
+  0 0 70px rgba(255, 47, 174, 0.95),
+  0 0 110px rgba(255, 47, 174, 0.8),
+  0 0 180px rgba(255, 120, 210, 0.75);
+    
+}
+
 #box {
   width: min(1700px, 98vw);
-  height: calc(100vh - 48px);
+  height: calc(100vh - 95px);
 
-  margin: 0 auto;
+  margin: 70px auto 0 auto;
 
   display: grid;
-
   grid-template-columns:
     minmax(320px, 38vw)
     minmax(340px, 1fr);
 
-  column-gap: clamp(10px, 1.5vw, 30px);
+  column-gap: clamp(10px, 1.5vw, 24px);
 
   align-items: start;
-
   overflow: hidden;
 }
 
@@ -70,6 +115,18 @@ body {
   border-radius: 0;
 
   z-index: 5;
+
+  pointer-events: none;
+}
+#girl,
+#shirt,
+#bottoms,
+#shoes,
+#hair,
+#face,
+#skin,
+#bangs {
+  pointer-events: none;
 }
 
 /* CHARACTER LAYERS */
@@ -125,12 +182,25 @@ body {
 }
 
 .listofoptions {
-  grid-column: 2 / 5;
+  grid-column: 2;
+
   display: grid;
-  grid-template-columns: minmax(680px, 1fr) 130px 130px;
-  column-gap: clamp(18px, 1.8vw, 30px);
-  row-gap: 10px;
-  align-items: start;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: clamp(8px, 0.8vw, 14px);
+
+  width: 100%;
+  max-width: 920px;
+
+  height: calc(100vh - 135px);
+  max-height: calc(100vh - 135px);
+
+  align-content: start;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 18px 8px 24px 0;
+  margin-left: -18px;
 }
 
 .listofoptions > h3.sectionTitle,
@@ -277,7 +347,7 @@ body {
   border-radius: 20px;
   box-shadow: 0px 2px 8px rgba(24, 25, 88, 0.18);
   padding: 0.3rem;
-  width: clamp(82px, 7vw, 115px);
+ width: clamp(110px, 9vw, 150px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -298,11 +368,16 @@ body {
 .shirtPreviewCard img,
 .bottomsPreviewCard img,
 .shoesPreviewCard img {
-  width: clamp(44px, 4vw, 70px);
-  height: clamp(44px, 4vw, 70px);
+  width: clamp(68px, 6vw, 110px);
+  height: clamp(68px, 6vw, 110px);
+
   object-fit: contain;
+
   background-color: #ffffff;
-  border-radius: 10px;
+
+  border-radius: 12px;
+
+  padding: 4px;
 }
 
 .skinBtn {
@@ -506,64 +581,8 @@ button:hover {
 }
 }
 
-/* PHONES */
-@media (max-width: 700px) {
-  body {
-    width: 100vh;
-    height: 100vw;
-    min-height: 100vw;
-    overflow: hidden;
-    padding: 10px;
-
-    transform: rotate(90deg);
-    transform-origin: top left;
-    position: absolute;
-    top: 0;
-    left: 100vw;
-  }
-
-  #box {
-    width: 100vh;
-    height: 100vw;
-
-    display: grid;
-    grid-template-columns: 34% 66%;
-    column-gap: 10px;
-    align-items: start;
-  }
-
-  .listofoptions {
-  grid-column: 2;
-  width: 100%;
-  grid-template-columns: repeat(2, minmax(150px, 1fr));
-  gap: 6px;
-}
-
-  .sectionTitle {
-    font-size: 0.8rem;
-  }
-
-  .sideBtn {
-    padding: 4px 6px;
-    font-size: 12px;
-  }
-
-  #musicPlayer {
-    top: 10px;
-    left: 10px;
-  }
-
-  #musicPlayer img {
-    width: 55px;
-  }
-
-  body {
-  background-size: cover;
-  background-position: center center;
-  }
-}
-
-@media (max-width: 700px) {
+/* SIDEWAYS TRANSITION VIEW */
+@media (max-width: 700px) and (min-width: 461px) {
   html {
     width: 100vw;
     height: 100vh;
@@ -578,24 +597,284 @@ button:hover {
     width: 100vh;
     height: 100vw;
 
-    top: 50%;
-    left: 50%;
+    top: 0;
+    left: 100vw;
 
     background-image: url("./images4/GirlyBackground.png");
     background-size: cover;
     background-position: left center;
     background-repeat: no-repeat;
 
-    transform: translate(-50%, -50%) rotate(90deg);
-    transform-origin: center;
+    transform: rotate(90deg);
+    transform-origin: top left;
 
     z-index: 0;
     pointer-events: none;
   }
 
   body {
+    width: 100vh;
+    height: 100vw;
+    min-height: 100vw;
+
+    padding: 14px;
+    margin: 0;
+
+    overflow: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 100vw;
+
+    transform: rotate(90deg);
+    transform-origin: top left;
+
     background: none;
     z-index: 1;
+  }
+
+  #gameTitle {
+    top: 14px;
+    left: 5%;
+    transform: none;
+
+    width: 36vh;
+
+    font-size: clamp(1.1rem, 2.7vh, 1.9rem);
+    line-height: 1.05;
+    text-align: center;
+  }
+
+  #box {
+    width: 100vh;
+    height: 100vw;
+
+    margin: 10px 0 0 0;
+
+    display: grid;
+    grid-template-columns: minmax(300px, 42vh) minmax(0, 1fr);
+    column-gap: 14px;
+
+    align-items: start;
+    overflow: hidden;
+  }
+
+  .listofoptions {
+    grid-column: 2;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    width: 100%;
+    height: calc(100vw - 20px);
+
+    gap: 8px;
+
+    align-content: start;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 6px 8px 22px 0;
+    margin-left: 0;
+  }
+
+  .skinCard {
+    grid-column: 1;
+  }
+
+  .optionCard {
+    padding: 7px 10px;
+    border-radius: 12px;
+  }
+
+  .sectionTitle {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+
+  .optionGrid {
+    gap: 5px;
+  }
+
+  .itemBtn {
+    max-width: 58px;
+    min-width: 32px;
+    padding: 3px;
+  }
+
+  .skinCard .itemBtn {
+    max-width: 50px;
+  }
+
+  #musicPlayer {
+    top: 8px;
+    left: 8px;
+  }
+
+  #musicPlayer img {
+    width: 52px;
+  }
+}
+/* PHONES */
+@media (max-width: 460px) {
+  html {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #f7d9f1;
+  }
+
+  html::before {
+    content: "";
+    position: fixed;
+
+    width: 100vh;
+    height: 100vw;
+
+    top: 0;
+    left: 100vw;
+
+    background-image: url("./images4/GirlyBackground.png");
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+
+    transform: rotate(90deg);
+    transform-origin: top left;
+
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  body {
+    width: 100vh;
+    height: 100vw;
+    min-height: 100vw;
+
+    padding: 8px;
+    margin: 0;
+
+    overflow: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 100vw;
+
+    transform: rotate(90deg);
+    transform-origin: top left;
+
+    background: none;
+    z-index: 1;
+  }
+
+  #gameTitle {
+  top: 12px;
+  left: 5%;
+  transform: none;
+
+  width: 32vh;
+
+  font-size: clamp(0.9rem, 2.6vh, 1.4rem);
+  line-height: 1.05;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+  #box {
+  width: 100vh;
+  height: 100vw;
+
+  margin: 8px 0 0 0;
+
+  display: grid;
+  grid-template-columns: minmax(210px, 36vh) minmax(0, 1fr);
+  column-gap: 8px;
+
+  align-items: start;
+  overflow: hidden;
+}
+
+  .listofoptions {
+  grid-column: 2;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(130px, 1fr));
+
+  width: 100%;
+  height: calc(100vw - 16px);
+
+  gap: 6px;
+
+  align-content: start;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 4px 6px 18px 0;
+  margin-left: 0;
+}
+
+.skinCard {
+  grid-column: 1 / -1;
+
+  justify-self: stretch;
+
+  width: 100%;
+}
+
+  .optionCard {
+    padding: 5px 7px;
+    border-radius: 10px;
+  }
+
+  .sectionTitle {
+    font-size: 0.7rem;
+    margin-bottom: 4px;
+  }
+
+  .optionGrid {
+    gap: 4px;
+  }
+
+  .optionGrid.five {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .optionGrid.six {
+  grid-template-columns: repeat(6, 1fr);
+
+  gap: 2px;
+}
+
+  .itemBtn {
+  width: 100%;
+
+  min-width: 0;
+  max-width: 38px;
+
+  aspect-ratio: 1 / 1;
+
+  padding: 2px;
+}
+
+.skinCard .itemBtn {
+  max-width: 45px;
+}
+
+.skinCard .optionGrid.six {
+  align-items: center;
+
+  height: auto;
+}
+
+  #musicPlayer {
+    top: 6px;
+    left: 6px;
+  }
+
+  #musicPlayer img {
+    width: 42px;
   }
 }
 
@@ -603,6 +882,7 @@ button:hover {
   border: 2px solid rgba(255, 255, 255, 0.9);
   border-radius: clamp(12px, 1.2vw, 20px);
   padding: clamp(8px, 1vw, 14px);
+   backdrop-filter: blur(10000px);
   background: rgba(255, 255, 255, 0.08);
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.35);
 }
@@ -654,4 +934,27 @@ button:hover {
 .itemBtn.selected {
   border: 3px solid #ff7be6;
   box-shadow: 0 0 10px rgba(255, 123, 230, 0.8);
+}
+
+/* MAKE FACE OPTION IMAGES VISIBLE */
+.faceBtn {
+  position: relative;
+  overflow: hidden;
+}
+
+.faceBtn img {
+  position: absolute;
+
+  width: 700%;
+  height: 700%;
+
+  max-width: none;
+  max-height: none;
+
+  left: 43%;
+  top: -68%;
+
+  transform: translateX(-50%);
+
+  object-fit: contain;
 }
