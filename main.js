@@ -322,8 +322,8 @@ function updateCharacterPosition() {
   const imgW = 1792;
   const imgH = 1024;
 
-  const rugX = 310;
-  const rugY = 900;
+  const rugX = 340;
+  const rugY = 915;
 
   const isPhone = window.innerWidth <= 700;
 
