@@ -555,10 +555,8 @@ button:hover {
   border-radius: 20px;
 }
 
-
-
 /* SMALLER LAPTOPS */
-@media (max-width: 1000px) {
+@media (max-width: 1250px) {
   body {
     padding: 16px;
   }
@@ -574,6 +572,10 @@ button:hover {
   width: 100%;
   grid-template-columns: 1fr;
   gap: 8px;
+}
+
+#backdrop {
+  margin-left: -45px;
 }
 
 .skinCard {
@@ -631,6 +633,14 @@ button:hover {
 
     background: none;
     z-index: 1;
+  }
+
+  #backdrop {
+    width: calc(570px * var(--sceneScale));
+    height: calc(830px * var(--sceneScale));
+
+    left: calc(var(--rugScreenX) - (570px * var(--sceneScale) / 2));
+    top: calc(var(--rugScreenY) - (760px * var(--sceneScale)));
   }
 
   #gameTitle {
@@ -715,7 +725,12 @@ button:hover {
   #musicPlayer img {
     width: 52px;
   }
+
+   #backdrop {
+  margin-left: 0.4%;
 }
+}
+
 /* PHONES */
 @media (max-width: 460px) {
   html {
@@ -723,6 +738,14 @@ button:hover {
     height: 100vh;
     overflow: hidden;
     background: #f7d9f1;
+  }
+
+  #backdrop {
+    width: calc(570px * var(--sceneScale));
+    height: calc(830px * var(--sceneScale));
+
+    left: calc(var(--rugScreenX) - (570px * var(--sceneScale) / 2));
+    top: calc(var(--rugScreenY) - (760px * var(--sceneScale)));
   }
 
   html::before {
