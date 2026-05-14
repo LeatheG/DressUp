@@ -816,7 +816,7 @@ button:hover {
     margin-left: 0;
     padding: 4px 6px 18px 0;
 
-    gap: 18px;
+    gap: 2px;
   }
 
   .skinCard {
@@ -826,7 +826,7 @@ button:hover {
   }
 
   .optionCard {
-    padding: 5px 7px;
+    padding: 3px 5px;
     border-radius: 10px;
   }
 
@@ -974,7 +974,8 @@ button:hover {
     grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
   }
 
-  .bottomsGrid {
+  .optionGrid.six.bottomsGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 4px !important;
   }
 }
