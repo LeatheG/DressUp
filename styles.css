@@ -20,7 +20,7 @@ body {
   padding: 24px;
 
   background-color: #f7d9f1;
-  background-image: url("./images4/GirlyBackground.png");
+  background-image: url("./images4/GirlyBackground.PNG");
   background-size: cover;
   background-position: left center;
   background-repeat: no-repeat;
@@ -520,8 +520,8 @@ button:hover {
 .shirt4 { background-image: url("./images4/shirt4.png"); }
 .shirt5 { background-image: url("./images4/shirt5.png"); }
 .shirt6 { background-image: url("./images4/shirt6.png"); }
-.shirt7 { background-image: url("./images4/shirt7.png"); }
-.shirt8 { background-image: url("./images4/shirt8.png"); }
+.shirt7 { background-image: url("./images4/shirt7.PNG"); }
+.shirt8 { background-image: url("./images4/shirt8.PNG"); }
 
 .shoes1 { background-image: url("./images4/shoes1.png"); }
 .shoes2 { background-image: url("./images4/shoes2.png"); }
@@ -546,12 +546,12 @@ button:hover {
 .face5 { background-image: url("./images4/face5.png"); }
 .face6 { background-image: url("./images4/face6.png"); }
 
-.skin1 { background-image: url("./images4/skin1.png"); }
-.skin2 { background-image: url("./images4/skin2.png"); }
-.skin3 { background-image: url("./images4/skin3.png"); }
-.skin4 { background-image: url("./images4/skin4.png"); }
-.skin5 { background-image: url("./images4/skin5.png"); }
-.skin6 { background-image: url("./images4/skin6.png"); }
+.skin1 { background-image: url("./images4/skin1.PNG"); }
+.skin2 { background-image: url("./images4/skin2.PNG"); }
+.skin3 { background-image: url("./images4/skin3.PNG"); }
+.skin4 { background-image: url("./images4/skin4.PNG"); }
+.skin5 { background-image: url("./images4/skin5.PNG"); }
+.skin6 { background-image: url("./images4/skin6.PNG"); }
 
 /* SMALLER LAPTOPS */
 @media (max-width: 1250px) {
