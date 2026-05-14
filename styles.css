@@ -156,14 +156,20 @@ body {
 }
 
 .sectionTitle {
-  margin: 0;
+  margin: 0 0 4px;
+
+  color: #c06bb0;
+
+  font-family: "Pacifico", cursive;
+  font-size: clamp(0.7rem, 1vw, 1.1rem);
+  font-weight: normal;
+  letter-spacing: 1px;
   text-align: center;
 
-  color: #b35fa3;
-  font-family: "Trebuchet MS", sans-serif;
-  font-size: 1.3rem;
-  letter-spacing: 1px;
-  text-shadow: 0 1px 3px rgba(255, 200, 240, 0.8);
+  text-shadow:
+    0 0 3px rgba(255, 255, 255, 0.9),
+    0 0 8px rgba(255, 170, 230, 0.8),
+    0 0 14px rgba(255, 120, 210, 0.55);
 }
 
 .optionCard {
@@ -691,10 +697,22 @@ button:hover {
     border-radius: 12px;
   }
 
-  .sectionTitle {
-    margin-bottom: 5px;
-    font-size: 0.9rem;
-  }
+ .sectionTitle {
+  margin: 0 0 4px;
+
+  color: #c06bb0;
+
+  font-family: "Pacifico", cursive;
+  font-size: clamp(0.7rem, 1vw, 1.1rem);
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-align: center;
+
+  text-shadow:
+    0 0 3px rgba(255, 255, 255, 0.9),
+    0 0 8px rgba(255, 170, 230, 0.8),
+    0 0 14px rgba(255, 120, 210, 0.55);
+}
 
   .optionGrid {
     gap: 5px;
@@ -805,7 +823,7 @@ button:hover {
 
     width: 100vh;
     height: 100vw;
-    margin: 8px 0 0;
+    margin: -2px 0 0;
   }
 
   .listofoptions {
@@ -816,7 +834,7 @@ button:hover {
     margin-left: 0;
     padding: 4px 6px 18px 0;
 
-    gap: 2px;
+    gap: 3px;
   }
 
   .skinCard {
@@ -826,14 +844,26 @@ button:hover {
   }
 
   .optionCard {
-    padding: 3px 5px;
+    padding: 2px 4px;
     border-radius: 10px;
   }
 
   .sectionTitle {
-    margin-bottom: 4px;
-    font-size: 0.7rem;
-  }
+  margin: 0 0 4px;
+
+  color: #c06bb0;
+
+  font-family: "Pacifico", cursive;
+  font-size: clamp(0.7rem, 1vw, 1.1rem);
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-align: center;
+
+  text-shadow:
+    0 0 3px rgba(255, 255, 255, 0.9),
+    0 0 8px rgba(255, 170, 230, 0.8),
+    0 0 14px rgba(255, 120, 210, 0.55);
+}
 
   .optionGrid {
     gap: 4px;
@@ -978,4 +1008,43 @@ button:hover {
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     gap: 4px !important;
   }
+}
+
+/* FIX REGULAR DESKTOP VIEW ONLY */
+@media (min-width: 1251px) {
+  .listofoptions {
+    height: calc(100vh - 90px);
+    gap: 10px;
+    padding: 8px;
+    align-content: start;
+  }
+
+  .optionCard {
+    padding: 8px 10px;
+  }
+
+  .itemBtn {
+  max-width: 70px;
+  padding: 5px;
+}
+
+  .skinCard .itemBtn {
+    max-width: 70px;
+  }
+
+  .sectionTitle {
+    margin-bottom: 2px;
+  }
+
+  .optionGrid {
+    gap: 7px;
+  }
+
+  .optionGrid.six.bottomsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .listofoptions {
+  padding-top: 55px;
+}
 }
