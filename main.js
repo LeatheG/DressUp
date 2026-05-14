@@ -9,7 +9,7 @@ const state = {
 };
 
 const COUNTS = {
-  bottoms: 6,
+  bottoms: 8,
   hair: 8,
   shirt: 8,
   shoes: 6,
