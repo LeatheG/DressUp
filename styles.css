@@ -491,53 +491,53 @@ button:hover {
 .bangs7 { background-image: url("./images4/bangs7.png"); }
 .bangs8 { background-image: url("./images4/bangs8.png"); }
 
-.bottoms1 { background-image: url("./images4/bottoms1.PNG"); }
-.bottoms2 { background-image: url("./images4/bottoms2.PNG"); }
-.bottoms3 { background-image: url("./images4/bottoms3.PNG"); }
-.bottoms4 { background-image: url("./images4/bottoms4.PNG"); }
-.bottoms5 { background-image: url("./images4/bottoms5.PNG"); }
-.bottoms6 { background-image: url("./images4/bottoms6.PNG"); }
+.bottoms1 { background-image: url("./images4/bottoms1.png"); }
+.bottoms2 { background-image: url("./images4/bottoms2.png"); }
+.bottoms3 { background-image: url("./images4/bottoms3.png"); }
+.bottoms4 { background-image: url("./images4/bottoms4.png"); }
+.bottoms5 { background-image: url("./images4/bottoms5.png"); }
+.bottoms6 { background-image: url("./images4/bottoms6.png"); }
 .bottoms7 { background-image: url("./images4/bottoms7.png"); }
 .bottoms8 { background-image: url("./images4/bottoms8.png"); }
 
-.shirt1 { background-image: url("./images4/shirt1.PNG"); }
-.shirt2 { background-image: url("./images4/shirt2.PNG"); }
-.shirt3 { background-image: url("./images4/shirt3.PNG"); }
-.shirt4 { background-image: url("./images4/shirt4.PNG"); }
-.shirt5 { background-image: url("./images4/shirt5.PNG"); }
-.shirt6 { background-image: url("./images4/shirt6.PNG"); }
-.shirt7 { background-image: url("./images4/shirt7.PNG"); }
-.shirt8 { background-image: url("./images4/shirt8.PNG"); }
+.shirt1 { background-image: url("./images4/shirt1.png"); }
+.shirt2 { background-image: url("./images4/shirt2.png"); }
+.shirt3 { background-image: url("./images4/shirt3.png"); }
+.shirt4 { background-image: url("./images4/shirt4.png"); }
+.shirt5 { background-image: url("./images4/shirt5.png"); }
+.shirt6 { background-image: url("./images4/shirt6.png"); }
+.shirt7 { background-image: url("./images4/shirt7.png"); }
+.shirt8 { background-image: url("./images4/shirt8.png"); }
 
 .shoes1 { background-image: url("./images4/shoes1.png"); }
-.shoes2 { background-image: url("./images4/shoes2.PNG"); }
+.shoes2 { background-image: url("./images4/shoes2.png"); }
 .shoes3 { background-image: url("./images4/shoes3.png"); }
-.shoes4 { background-image: url("./images4/shoes4.PNG"); }
-.shoes5 { background-image: url("./images4/shoes5.PNG"); }
-.shoes6 { background-image: url("./images4/shoes6.PNG"); }
+.shoes4 { background-image: url("./images4/shoes4.png"); }
+.shoes5 { background-image: url("./images4/shoes5.png"); }
+.shoes6 { background-image: url("./images4/shoes6.png"); }
 
 .hair0 { background-image: url("./images4/hair0.png"); }
 .hair1 { background-image: url("./images4/hair1.png"); }
-.hair2 { background-image: url("./images4/hair2.PNG"); }
-.hair3 { background-image: url("./images4/hair3.PNG"); }
+.hair2 { background-image: url("./images4/hair2.png"); }
+.hair3 { background-image: url("./images4/hair3.png"); }
 .hair4 { background-image: url("./images4/hair4.png"); }
-.hair5 { background-image: url("./images4/hair5.PNG"); }
+.hair5 { background-image: url("./images4/hair5.png"); }
 .hair6 { background-image: url("./images4/hair6.png"); }
-.hair7 { background-image: url("./images4/hair7.PNG"); }
+.hair7 { background-image: url("./images4/hair7.png"); }
 
 .face1 { background-image: url("./images4/face1.png"); }
 .face2 { background-image: url("./images4/face2.png"); }
 .face3 { background-image: url("./images4/face3.png"); }
-.face4 { background-image: url("./images4/face4.PNG"); }
-.face5 { background-image: url("./images4/face5.PNG"); }
-.face6 { background-image: url("./images4/face6.PNG"); }
+.face4 { background-image: url("./images4/face4.png"); }
+.face5 { background-image: url("./images4/face5.png"); }
+.face6 { background-image: url("./images4/face6.png"); }
 
-.skin1 { background-image: url("./images4/skin1.PNG"); }
-.skin2 { background-image: url("./images4/skin2.PNG"); }
-.skin3 { background-image: url("./images4/skin3.PNG"); }
-.skin4 { background-image: url("./images4/skin4.PNG"); }
-.skin5 { background-image: url("./images4/skin5.PNG"); }
-.skin6 { background-image: url("./images4/skin6.PNG"); }
+.skin1 { background-image: url("./images4/skin1.png"); }
+.skin2 { background-image: url("./images4/skin2.png"); }
+.skin3 { background-image: url("./images4/skin3.png"); }
+.skin4 { background-image: url("./images4/skin4.png"); }
+.skin5 { background-image: url("./images4/skin5.png"); }
+.skin6 { background-image: url("./images4/skin6.png"); }
 
 /* SMALLER LAPTOPS */
 @media (max-width: 1250px) {
