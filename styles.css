@@ -408,6 +408,7 @@ button,
 #musicPlayer,
 #musicPlayer img {
   cursor: url("./images4/pointer.png") 16 16, pointer;
+
 }
 
 button:hover {
@@ -507,11 +508,21 @@ button:hover {
 }
 
 #musicPlayer img {
-  width: 100px;  
+  width: 100px;
+  border: 3px solid #9ea9eb;
   border-radius: 50%;
+
   padding: 8%;
+
   background-color: #BAC3F8;
-  box-shadow: 0px 5px 14px rgba(253, 0, 241, 0.25);
+
+  box-shadow:
+    0 0 12px rgba(186, 195, 248, 0.9),
+    0 0 24px rgba(186, 195, 248, 0.8),
+    0 0 48px rgba(186, 195, 248, 0.7),
+    0 0 80px rgba(186, 195, 248, 0.55),
+    0 0 120px rgba(186, 195, 248, 0.4);
+
   transition: transform 0.2s ease;
 }
 
@@ -553,6 +564,15 @@ button:hover {
 .listofoptions::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.65);
   border-radius: 20px;
+}
+
+@media (min-width: 701px) {
+
+  #githubCredits {
+    top: 145px;
+    gap: 2px;
+  }
+
 }
 
 /* SMALLER LAPTOPS */
@@ -791,6 +811,14 @@ button:hover {
     z-index: 1;
   }
 
+  #githubCredits {
+  top: 55px;
+}
+
+#githubCredits {
+  gap: 0px;
+}
+
   #gameTitle {
   top: 12px;
   left: 5%;
@@ -972,21 +1000,28 @@ button:hover {
 .faceBtn img {
   position: absolute;
 
-  width: 700%;
-  height: 700%;
+  width: 600%;
+  height: 600%;
 
   max-width: none;
   max-height: none;
 
-  left: 43%;
-  top: -68%;
+  left: calc(43% + 1px);
+  top: -55%;
 
   transform: translateX(-50%);
 
   object-fit: contain;
 }
 
-/* MAKE SHOE OPTION IMAGES BIGGER */
+.face6Preview img {
+  width: 320%;
+  height: 320%;
+
+  left: 50%;
+  top: -9%;
+}
+
 /* MAKE SHOE OPTION IMAGES BIGGER */
 .shoesBtn {
   overflow: hidden;
@@ -1014,4 +1049,231 @@ button:hover {
 
 .mediumShoe img {
   transform: scale(4) translateY(10%);
+}
+
+/* CENTER SHIRT PREVIEWS */
+.shirtBtn {
+  overflow: hidden;
+}
+
+.shirtBtn img {
+  object-fit: contain;
+  object-position: center center;
+
+  transform: scale(3.1) translateY(11%);
+  transform-origin: center center;
+}
+
+.smallShirt img {
+  transform: scale(2.7) translateY(7%);
+}
+
+/* BOTTOM PREVIEW SIZING */
+.bottomsBtn {
+  overflow: hidden;
+}
+
+.bottomsBtn img {
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+/* 1 + 2 */
+.pantsStyle1 img {
+  transform: scale(2.3) translateY(-15%);
+}
+
+/* 3 */
+.pantsStyle2 img {
+  transform: scale(4) translateY(-0%);
+}
+
+/* 4 */
+.pantsStyle3 img {
+  transform: scale(3) translateY(-10%);
+}
+
+/* 5 */
+.pantsStyle4 img {
+  transform: scale(3.6) translateY(-6%);
+}
+
+/* HAIR PREVIEW SIZING */
+.hairBtn {
+  overflow: hidden;
+}
+
+.hairBtn img {
+  object-fit: contain;
+  object-position: center top;
+}
+
+/* 1 */
+.hair1Preview img {
+  transform: scale(3.6) translateY(33%);
+}
+
+/* 2 */
+.hair2Preview img {
+  transform: scale(2.6) translateY(28%);
+}
+
+/* 3 */
+.hair3Preview img {
+  transform: scale(1.43) translateY(8%);
+}
+
+/* 4 */
+.hair4Preview img {
+  transform: scale(3.8) translateX(-1%) translateY(35.9%);
+}
+
+/* 5 */
+.hair5Preview img {
+  transform: scale(1.2) translateY(4%);
+}
+
+/* BANGS PREVIEW SIZING */
+.bangsBtn {
+  overflow: hidden;
+}
+
+.bangsBtn img {
+  object-fit: contain;
+  object-position: center top;
+}
+
+/* 1 */
+.bangs1Preview img {
+  transform: scale(4.3) translateX(-0.8%) translateY(34%);
+}
+
+/* 2 */
+.bangs2Preview img {
+  transform: scale(4.3) translateX(-0.8%) translateY(37%);
+}
+
+/* 3 */
+.bangs3Preview img {
+  transform: scale(3.6) translateX(-0.8%) translateY(31.4%);
+}
+
+/* 4 */
+.bangs4Preview img {
+  transform: scale(4.3) translateX(-1%) translateY(35%);
+}
+
+/* 5 */
+.bangs5Preview img {
+  transform: scale(3.1) translateY(27.5%);
+}
+
+/* MAKE SKIN OPTIONS BIGGER */
+.skinBtn {
+  overflow: hidden;
+}
+
+.skinBtn img {
+  object-fit: contain;
+  object-position: center center;
+
+  transform: scale(400) translateY(22%);
+  transform-origin: center center;
+}
+
+#githubCredits {
+  position: fixed;
+
+  left: 18px;
+  top: 165px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  z-index: 1000;
+}
+
+#githubCredits a {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 2px;
+
+  text-decoration: none;
+
+  width: 82px;
+
+  padding: 10px 8px;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.18);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 2px solid rgba(255,255,255,0.5);
+
+  box-shadow:
+    0 0 14px rgba(255, 182, 230, 0.45),
+    0 0 28px rgba(186, 195, 248, 0.35);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  transform: scale(0.78);
+  transform-origin: left center;
+
+  text-align: center;
+}
+
+#githubCredits a:hover {
+  transform: scale(0.84);
+
+  box-shadow:
+    0 0 18px rgba(255, 182, 230, 0.7),
+    0 0 36px rgba(186, 195, 248, 0.55);
+}
+
+#githubCredits img {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  background: #BAC3F8;
+
+  padding: 4px;
+
+  box-shadow:
+    0 0 12px rgba(186, 195, 248, 0.8);
+}
+
+#githubCredits span {
+  font-family: "Trebuchet MS", sans-serif;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  color: white;
+
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.9),
+    0 0 18px rgba(255,150,220,0.7);
+}
+
+@media (max-width: 700px) {
+  #githubCredits {
+    top: 80px;
+    left: 5px;
+  }
+
+  #musicPlayer img {
+    width: 60px;
+  }
 }
