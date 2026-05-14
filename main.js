@@ -1,4 +1,4 @@
-let state = {
+const state = {
   bottoms: 1,
   hair: 1,
   shirt: 1,
@@ -8,319 +8,137 @@ let state = {
   skin: 1,
 };
 
-const BOTTOMS_COUNT = 6;
-const SHOES_COUNT = 6;
-const SHOES_IMAGE_FILES = [
-  "shoes1.png",
-  "shoes2.png",
-  "shoes3.png",
-  "shoes4.PNG",
-  "shoes5.PNG",
-  "shoes6.PNG",
-];
-const BANGS_COUNT = 8;
-const HAIR_COUNT = 8;
-const SHIRT_COUNT = 8;
-const FACE_COUNT = 6;
-const HAIR_IMAGE_FILES = [
-  "hair0.png",
-  "hair1.png",
-  "hair2.png",
-  "hair3.png",
-  "hair4.png",
-  "hair5.PNG",
-  "hair6.PNG",
-  "hair7.PNG",
-];
-const SHIRT_IMAGE_FILES = [
-  "shirt1.png",
-  "shirt2.png",
-  "shirt3.png",
-  "shirt4.png",
-  "shirt5.PNG",
-  "shirt6.PNG",
-  "shirt7.PNG",
-  "shirt8.PNG",
-];
-
-setLayerClass("bottoms", "bottoms", state.bottoms);
-setLayerClass("shoes", "shoes", state.shoes);
-setHairLayerClass();
-setLayerClass("shirt", "shirt", state.shirt);
-setLayerClass("face", "face", state.face);
-setLayerClass("bangs", "bangs", state.bangs);
-setLayerClass("skin", "skin", state.skin);
-
-updateBottomsCarousel();
-updateShoesCarousel();
-updateBangsCarousel();
-updateHairCarousel();
-updateShirtCarousel();
-updateFaceButtons();
-updateSkinButtons();
+const COUNTS = {
+  bottoms: 6,
+  hair: 8,
+  shirt: 8,
+  shoes: 6,
+  face: 6,
+  bangs: 8,
+  skin: 6,
+};
 
 const playlist = [
-  "./images4/BeepBox-Song.mp3", 
-  "./images4/BeepBox-Song(1).mp3" ,
-  "./images4/BeepBox-Song1.mp3" ,
+  "./images4/BeepBox-Song.mp3",
+  "./images4/BeepBox-Song(1).mp3",
+  "./images4/BeepBox-Song1.mp3",
 ];
 
 let currentTrack = 0;
+let isPlaying = false;
 
 function setLayerClass(elementId, classPrefix, value) {
   const element = document.querySelector(`#${elementId}`);
   if (!element) return;
-  element.setAttribute("class", `${classPrefix}${value}`);
+
+  element.className = `${classPrefix}${value}`;
 }
 
 function setHairLayerClass() {
   const hairElement = document.querySelector("#hair");
   if (!hairElement) return;
-  hairElement.setAttribute("class", `hair${state.hair - 1}`);
+
+  hairElement.className = `hair${state.hair - 1}`;
 }
 
-function nextValue(current, count) {
-  return current < count ? current + 1 : 1;
+function updateSelectedButtons(selector, selectedNumber) {
+  document.querySelectorAll(selector).forEach((button, index) => {
+    button.classList.toggle("selected", index + 1 === selectedNumber);
+  });
 }
 
-/* ---------- BOTTOMS ---------- */
+function setbangs(number) {
+  if (number < 1 || number > COUNTS.bangs) return;
 
-function getBottomsIndex(current, offset) {
-  return ((current - 1 + offset + BOTTOMS_COUNT) % BOTTOMS_COUNT) + 1;
+  state.bangs = number;
+  setLayerClass("bangs", "bangs", number);
+  updateSelectedButtons(".bangsBtn", number);
 }
 
-function setBottomsPreview(imgId, index) {
-  const img = document.getElementById(imgId);
-  if (img) {
-    const extension = index === 6 ? "PNG" : "png";
-    img.src = `./images4/bottoms${index}.${extension}`;
-  }
-}
+function sethair(number) {
+  if (number < 1 || number > COUNTS.hair) return;
 
-function updateBottomsCarousel() {
-  setBottomsPreview("bottomsFarPrevImg", getBottomsIndex(state.bottoms, -2));
-  setBottomsPreview("bottomsPrevImg", getBottomsIndex(state.bottoms, -1));
-  setBottomsPreview("bottomsCurrentImg", state.bottoms);
-  setBottomsPreview("bottomsNextImg", getBottomsIndex(state.bottoms, 1));
-  setBottomsPreview("bottomsFarNextImg", getBottomsIndex(state.bottoms, 2));
-}
-
-function nextbottoms() {
-  state.bottoms = nextValue(state.bottoms, BOTTOMS_COUNT);
-  setLayerClass("bottoms", "bottoms", state.bottoms);
-  updateBottomsCarousel();
-}
-
-function prevbottoms() {
-  state.bottoms = state.bottoms > 1 ? state.bottoms - 1 : BOTTOMS_COUNT;
-  setLayerClass("bottoms", "bottoms", state.bottoms);
-  updateBottomsCarousel();
-}
-
-/* ---------- SHOES ---------- */
-
-function getShoesIndex(current, offset) {
-  return ((current - 1 + offset + SHOES_COUNT) % SHOES_COUNT) + 1;
-}
-
-function setShoesPreview(imgId, index) {
-  const img = document.getElementById(imgId);
-  if (img) img.src = `./images4/${SHOES_IMAGE_FILES[index - 1]}`;
-}
-
-function updateShoesCarousel() {
-  setShoesPreview("shoesFarPrevImg", getShoesIndex(state.shoes, -2));
-  setShoesPreview("shoesPrevImg", getShoesIndex(state.shoes, -1));
-  setShoesPreview("shoesCurrentImg", state.shoes);
-  setShoesPreview("shoesNextImg", getShoesIndex(state.shoes, 1));
-  setShoesPreview("shoesFarNextImg", getShoesIndex(state.shoes, 2));
-}
-
-function nextshoes() {
-  state.shoes = nextValue(state.shoes, SHOES_COUNT);
-  setLayerClass("shoes", "shoes", state.shoes);
-  updateShoesCarousel();
-}
-
-function prevshoes() {
-  state.shoes = state.shoes > 1 ? state.shoes - 1 : SHOES_COUNT;
-  setLayerClass("shoes", "shoes", state.shoes);
-  updateShoesCarousel();
-}
-
-/* ---------- BANGS ---------- */
-
-function getBangsIndex(current, offset) {
-  return ((current - 1 + offset + BANGS_COUNT) % BANGS_COUNT) + 1;
-}
-
-function setBangsPreview(imgId, index) {
-  const img = document.getElementById(imgId);
-  if (img) img.src = `./images4/bangs${index}.png`;
-}
-
-function updateBangsCarousel() {
-  setBangsPreview("bangsFarPrevImg", getBangsIndex(state.bangs, -2));
-  setBangsPreview("bangsPrevImg", getBangsIndex(state.bangs, -1));
-  setBangsPreview("bangsCurrentImg", state.bangs);
-  setBangsPreview("bangsNextImg", getBangsIndex(state.bangs, 1));
-  setBangsPreview("bangsFarNextImg", getBangsIndex(state.bangs, 2));
-}
-
-function nextbangs() {
-  state.bangs = nextValue(state.bangs, BANGS_COUNT);
-  setLayerClass("bangs", "bangs", state.bangs);
-  updateBangsCarousel();
-}
-
-function prevbangs() {
-  state.bangs = state.bangs > 1 ? state.bangs - 1 : BANGS_COUNT;
-  setLayerClass("bangs", "bangs", state.bangs);
-  updateBangsCarousel();
-}
-
-/* ---------- HAIR ---------- */
-
-function getHairIndex(current, offset) {
-  return ((current - 1 + offset + HAIR_COUNT) % HAIR_COUNT) + 1;
-}
-
-function setHairPreview(imgId, index) {
-  const img = document.getElementById(imgId);
-  if (img) img.src = `./images4/${HAIR_IMAGE_FILES[index - 1]}`;
-}
-
-function updateHairCarousel() {
-  setHairPreview("hairFarPrevImg", getHairIndex(state.hair, -2));
-  setHairPreview("hairPrevImg", getHairIndex(state.hair, -1));
-  setHairPreview("hairCurrentImg", state.hair);
-  setHairPreview("hairNextImg", getHairIndex(state.hair, 1));
-  setHairPreview("hairFarNextImg", getHairIndex(state.hair, 2));
-}
-
-function nexthair() {
-  state.hair = nextValue(state.hair, HAIR_COUNT);
+  state.hair = number;
   setHairLayerClass();
-  updateHairCarousel();
+  updateSelectedButtons(".hairBtn", number);
 }
 
-function prevhair() {
-  state.hair = state.hair > 1 ? state.hair - 1 : HAIR_COUNT;
-  setHairLayerClass();
-  updateHairCarousel();
+function setshirt(number) {
+  if (number < 1 || number > COUNTS.shirt) return;
+
+  state.shirt = number;
+  setLayerClass("shirt", "shirt", number);
+  updateSelectedButtons(".shirtBtn", number);
 }
 
-/* ---------- SHIRT ---------- */
+function setbottoms(number) {
+  if (number < 1 || number > COUNTS.bottoms) return;
 
-function getShirtIndex(current, offset) {
-  return ((current - 1 + offset + SHIRT_COUNT) % SHIRT_COUNT) + 1;
+  state.bottoms = number;
+  setLayerClass("bottoms", "bottoms", number);
+  updateSelectedButtons(".bottomsBtn", number);
 }
 
-function setShirtPreview(imgId, index) {
-  const img = document.getElementById(imgId);
-  if (img) img.src = `./images4/${SHIRT_IMAGE_FILES[index - 1]}`;
-}
+function setshoes(number) {
+  if (number < 1 || number > COUNTS.shoes) return;
 
-function updateShirtCarousel() {
-  setShirtPreview("shirtFarPrevImg", getShirtIndex(state.shirt, -2));
-  setShirtPreview("shirtPrevImg", getShirtIndex(state.shirt, -1));
-  setShirtPreview("shirtCurrentImg", state.shirt);
-  setShirtPreview("shirtNextImg", getShirtIndex(state.shirt, 1));
-  setShirtPreview("shirtFarNextImg", getShirtIndex(state.shirt, 2));
+  state.shoes = number;
+  setLayerClass("shoes", "shoes", number);
+  updateSelectedButtons(".shoesBtn", number);
 }
-
-function nextshirt() {
-  state.shirt = nextValue(state.shirt, SHIRT_COUNT);
-  setLayerClass("shirt", "shirt", state.shirt);
-  updateShirtCarousel();
-}
-
-function prevshirt() {
-  state.shirt = state.shirt > 1 ? state.shirt - 1 : SHIRT_COUNT;
-  setLayerClass("shirt", "shirt", state.shirt);
-  updateShirtCarousel();
-}
-
-/* ---------- FACE ---------- */
 
 function setface(number) {
-  if (number < 1 || number > FACE_COUNT) return;
+  if (number < 1 || number > COUNTS.face) return;
+
   state.face = number;
   setLayerClass("face", "face", number);
-  updateFaceButtons();
+  updateSelectedButtons(".faceBtn", number);
 }
-
-function updateFaceButtons() {
-  const buttons = document.querySelectorAll(".faceBtn");
-
-  buttons.forEach((button, index) => {
-    if (index + 1 === state.face) {
-      button.classList.add("selected");
-    } else {
-      button.classList.remove("selected");
-    }
-  });
-}
-
-/* ---------- SKIN ---------- */
 
 function setskin(number) {
+  if (number < 1 || number > COUNTS.skin) return;
+
   state.skin = number;
   setLayerClass("skin", "skin", number);
-  updateSkinButtons();
-}
-
-function updateSkinButtons() {
-  const buttons = document.querySelectorAll(".skinBtn");
-
-  buttons.forEach((button, index) => {
-    if (index + 1 === state.skin) {
-      button.classList.add("selected");
-    } else {
-      button.classList.remove("selected");
-    }
-  });
-}
-
-/* ---------- MUSIC ---------- */
-
-let isPlaying = false;
-
-const bgMusic = document.getElementById("bgMusic");
-if (bgMusic) {
-  bgMusic.addEventListener("ended", () => {
-    currentTrack = (currentTrack + 1) % playlist.length;
-    bgMusic.src = playlist[currentTrack];
-    bgMusic.play();
-  });
+  updateSelectedButtons(".skinBtn", number);
 }
 
 function toggleMusic() {
   const music = document.getElementById("bgMusic");
   const icon = document.getElementById("recordIcon");
 
-  if (!music) return;
+  if (!music || !icon) return;
 
   if (!music.src || music.src === window.location.href) {
     music.src = playlist[currentTrack];
   }
 
   if (isPlaying) {
-    music.pause(); // pauses EXACT spot
+    music.pause();
     icon.src = "./images4/recordmute.png";
     isPlaying = false;
   } else {
-    music.play(); // resumes where it left off
+    music.play();
     icon.src = "./images4/recordspinning.gif";
     isPlaying = true;
   }
 }
 
-/* ---------- LOCK CHARACTER TO BACKGROUND RUG ---------- */
+function setupMusicPlaylist() {
+  const music = document.getElementById("bgMusic");
+
+  if (!music) return;
+
+  music.addEventListener("ended", () => {
+    currentTrack = (currentTrack + 1) % playlist.length;
+    music.src = playlist[currentTrack];
+    music.play();
+  });
+}
 
 function updateCharacterPosition() {
   const imgW = 1914;
-const imgH = 913;
+  const imgH = 913;
 
   const rugX = 310;
   const rugY = 890;
@@ -343,43 +161,19 @@ const imgH = 913;
   document.documentElement.style.setProperty("--rugScreenY", `${rugScreenY}px`);
 }
 
-window.addEventListener("load", updateCharacterPosition);
+function initializeGame() {
+  setbottoms(state.bottoms);
+  setshoes(state.shoes);
+  sethair(state.hair);
+  setshirt(state.shirt);
+  setface(state.face);
+  setbangs(state.bangs);
+  setskin(state.skin);
+
+  setupMusicPlaylist();
+  updateCharacterPosition();
+}
+
+window.addEventListener("load", initializeGame);
 window.addEventListener("resize", updateCharacterPosition);
 window.addEventListener("orientationchange", updateCharacterPosition);
-
-
-function setbangs(number) {
-  state.bangs = number;
-  setLayerClass("bangs", "bangs", number);
-  updateSelectedButtons(".bangsBtn", number);
-}
-
-function sethair(number) {
-  state.hair = number;
-  setHairLayerClass();
-  updateSelectedButtons(".hairBtn", number);
-}
-
-function setshirt(number) {
-  state.shirt = number;
-  setLayerClass("shirt", "shirt", number);
-  updateSelectedButtons(".shirtBtn", number);
-}
-
-function setbottoms(number) {
-  state.bottoms = number;
-  setLayerClass("bottoms", "bottoms", number);
-  updateSelectedButtons(".bottomsBtn", number);
-}
-
-function setshoes(number) {
-  state.shoes = number;
-  setLayerClass("shoes", "shoes", number);
-  updateSelectedButtons(".shoesBtn", number);
-}
-
-function updateSelectedButtons(selector, selectedNumber) {
-  document.querySelectorAll(selector).forEach((button, index) => {
-    button.classList.toggle("selected", index + 1 === selectedNumber);
-  });
-}
